@@ -727,8 +727,7 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
   display: grid;
   grid-template-columns: minmax(280px, 0.86fr) minmax(320px, 1.14fr);
   gap: clamp(22px, 4vw, 54px);
-  align-items: stretch;
-  min-height: 420px;
+  align-items: start;
   margin-bottom: 32px;
 }
 
@@ -792,17 +791,19 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
 }
 
 .service-image {
-  min-height: 100%;
   margin: 0;
   overflow: hidden;
   background: #dfe8f2;
+  border-radius: 6px;
 }
 
 .service-image img {
+  display: block;
   width: 100%;
-  height: 100%;
-  min-height: 420px;
+  height: auto;
+  max-height: 520px;
   object-fit: cover;
+  border-radius: 6px;
 }
 
 .business-grid {
