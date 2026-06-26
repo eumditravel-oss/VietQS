@@ -16,7 +16,7 @@ const i18n = {
     title: "Viet QS | 수량산출과 공사비 컨설팅",
     description:
       "Viet QS는 CONCOST와 공사비닷컴의 견적 데이터와 베트남 실행력을 연결하는 수량산출, BOQ, 공사비 검토 서비스입니다.",
-    nav: ["사업영역", "그룹", "CAD QS", "프로젝트", "문의"],
+    nav: ["사업영역", "그룹", "캐드견적", "프로젝트", "문의"],
     menu: "MENU",
     menuOpen: "메뉴 열기",
     menuClose: "메뉴 닫기",
