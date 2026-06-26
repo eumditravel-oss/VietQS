@@ -735,3 +735,29 @@ langButtons.forEach((button) => {
 
 updateStaticText();
 renderTab(currentService, false);
+
+// Scroll Animations
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Add reveal classes dynamically
+document.querySelectorAll('.hero-content, .hero-panel, .section-heading, .platform-copy, .service-tabs, .service-copy, .service-image, .cad-visual, .cad-content, .contact-section > div').forEach(el => el.classList.add('reveal'));
+document.querySelectorAll('.brand-card').forEach((el, i) => { el.classList.add('reveal', `delay-${(i+1)*100}`); });
+document.querySelectorAll('.platform-services article').forEach((el, i) => { el.classList.add('reveal', `delay-${(i+1)*100}`); });
+document.querySelectorAll('.business-grid article').forEach((el, i) => { el.classList.add('reveal', `delay-${(i%4+1)*100}`); });
+document.querySelectorAll('.project-panels article').forEach((el, i) => { el.classList.add('reveal', `delay-${(i+1)*100}`); });
+document.querySelectorAll('.metrics strong').forEach((el, i) => { el.classList.add('reveal', `delay-${(i+1)*100}`); });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));

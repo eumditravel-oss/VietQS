@@ -27,7 +27,26 @@ body {
   color: var(--ink);
   font-family: "Pretendard", "Noto Sans KR", "Segoe UI", Arial, sans-serif;
   background: var(--white);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
 
 a {
   color: inherit;
