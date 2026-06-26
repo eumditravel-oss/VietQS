@@ -629,7 +629,7 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
   color: var(--white);
   border-color: transparent;
   background:
-    linear-gradient(145deg, rgba(15, 68, 138, 0.85), rgba(0, 114, 206, 0.8)),
+    linear-gradient(145deg, rgba(25, 100, 180, 0.75), rgba(10, 140, 240, 0.7)),
     url("../images/hero-construction.jpg") center / cover;
 }
 
@@ -850,7 +850,7 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
 
 .business-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1px;
   background: #dfe4ec;
 }
