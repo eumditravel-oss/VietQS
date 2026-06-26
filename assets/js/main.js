@@ -50,7 +50,7 @@ const i18n = {
           title: "베트남 Quantity Surveying",
           body:
             "수량산출, BOQ/WBS 작성, 공사비 검토, 설계변경 정산을 베트남 현지 프로젝트 조건에 맞춰 빠르고 명확하게 수행합니다.",
-          link: "문의하기",
+          link: "지원하기",
         },
       ],
       platformEyebrow: "GONGSABI.COM DATA",
@@ -75,6 +75,7 @@ const i18n = {
         ["02", "원가계산 및 내역서", "직접공사비, 경비, 간접공사비를 포함한 원가계산서와 단가 대비표를 구성합니다."],
         ["03", "설계변경 정산", "당초와 변경 도면의 수량과 금액 차이를 비교해 정산과 클레임 근거를 정리합니다."],
         ["04", "해외 및 FED 내역서", "CSI CODE, FED 양식, WBS 패키지 기준의 해외 프로젝트 산출근거를 작성합니다."],
+        ["05", "구조 BIM 산출", "2D 도면에 BIM을 활용하여 정밀한 구조 모델링과 오차 없는 수량 산출 근거를 제공합니다."],
       ],
     },
     cad: {
@@ -239,7 +240,7 @@ const i18n = {
           title: "Quantity Surveying in Vietnam",
           body:
             "Viet QS executes quantity take-off, BOQ/WBS, cost review, and design-change settlement for Vietnam project conditions.",
-          link: "Contact us",
+          link: "Apply",
         },
       ],
       platformEyebrow: "GONGSABI.COM DATA",
@@ -264,6 +265,7 @@ const i18n = {
         ["02", "Cost Statement", "Build cost statements and unit-price comparisons including direct cost, expenses, and indirect cost."],
         ["03", "Design Change", "Compare quantity and cost differences between original and revised drawings for settlement and claims."],
         ["04", "Overseas / FED BOQ", "Prepare estimate evidence based on CSI CODE, FED formats, and WBS packages."],
+        ["05", "Structural BIM Take-off", "We provide precise structural modeling and error-free quantity take-off evidence by utilizing BIM on 2D drawings."],
       ],
     },
     cad: {
@@ -428,7 +430,7 @@ const i18n = {
           title: "Quantity Surveying tại Việt Nam",
           body:
             "Viet QS thực hiện bóc tách khối lượng, BOQ/WBS, kiểm tra chi phí và quyết toán thay đổi thiết kế theo điều kiện dự án tại Việt Nam.",
-          link: "Liên hệ",
+          link: "Ứng tuyển",
         },
       ],
       platformEyebrow: "GONGSABI.COM DATA",
@@ -447,12 +449,13 @@ const i18n = {
       title: "Viet QS triển khai quy trình dự toán thực tế của CONCOST.",
       body:
         "Từ kiểm tra bản vẽ đến bảng giá thành, BOQ, thay đổi thiết kế và dự toán quốc tế/FED, quy trình được tổ chức theo từng giai đoạn dự án.",
-      tabs: ["Bóc tách KL", "Kiểm tra chi phí", "Thay đổi thiết kế", "Quốc tế/FED"],
+      tabs: ["Bóc tách KL", "Kiểm tra chi phí", "Thay đổi thiết kế", "Quốc tế/FED", "BIM Kết cấu"],
       cards: [
         ["01", "Dự toán sơ bộ & chi tiết", "Bóc tách khối lượng phục vụ đánh giá khả thi và hồ sơ mời thầu từ bản vẽ ban đầu đến bản vẽ chi tiết."],
         ["02", "Bảng giá thành", "Lập bảng giá thành và so sánh đơn giá gồm chi phí trực tiếp, chi phí chung và chi phí gián tiếp."],
         ["03", "Thay đổi thiết kế", "So sánh chênh lệch khối lượng và chi phí giữa bản vẽ ban đầu và bản vẽ thay đổi cho quyết toán/claim."],
         ["04", "BOQ quốc tế / FED", "Chuẩn bị căn cứ dự toán theo CSI CODE, mẫu FED và gói WBS."],
+        ["05", "Bóc tách BIM Kết cấu", "Cung cấp mô hình kết cấu chính xác và cơ sở bóc tách khối lượng không sai sót bằng cách ứng dụng BIM trên bản vẽ 2D."],
       ],
     },
     cad: {
@@ -888,7 +891,7 @@ document.querySelectorAll('.platform-services article').forEach((el, i) => {
 
 // Stagger: business grid cards
 document.querySelectorAll('.business-grid article').forEach((el, i) => {
-  el.classList.add('fade-up', `stagger-${(i % 4) + 1}`);
+  el.classList.add('fade-up', `stagger-${(i % 5) + 1}`);
   scrollObserver.observe(el);
 });
 
