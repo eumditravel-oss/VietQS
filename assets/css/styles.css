@@ -629,7 +629,7 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
   color: var(--white);
   border-color: transparent;
   background:
-    linear-gradient(145deg, rgba(8, 42, 99, 0.88), rgba(0, 90, 168, 0.82)),
+    linear-gradient(145deg, rgba(15, 68, 138, 0.85), rgba(0, 114, 206, 0.8)),
     url("../images/hero-construction.jpg") center / cover;
 }
 
