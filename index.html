@@ -18,6 +18,7 @@
 
       <nav class="desktop-nav" aria-label="Main menu">
         <a href="#business">Business</a>
+        <a href="#group">Group</a>
         <a href="#cad">CAD QS</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -39,6 +40,7 @@
 
     <aside class="mobile-menu" aria-hidden="true">
       <a href="#business">Business</a>
+      <a href="#group">Group</a>
       <a href="#cad">CAD QS</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
@@ -48,22 +50,31 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-bg" role="img" aria-label="Construction site silhouette"></div>
         <div class="section-rail" aria-label="Hero section navigation">
-          <span>Quantity take-off</span>
-          <button class="rail-dot active" type="button" data-service="takeoff" aria-label="Quantity take-off"></button>
-          <button class="rail-dot" type="button" data-service="cost" aria-label="Cost review"></button>
-          <button class="rail-dot" type="button" data-service="cad" aria-label="CAD QS"></button>
+          <span class="rail-line" aria-hidden="true"></span>
+          <button class="rail-item active" type="button" data-service="takeoff" aria-label="수량산출">
+            <i aria-hidden="true"></i><b>수량산출</b>
+          </button>
+          <button class="rail-item" type="button" data-service="cost" aria-label="공사비 검토">
+            <i aria-hidden="true"></i><b>공사비 검토</b>
+          </button>
+          <button class="rail-item" type="button" data-service="change" aria-label="설계변경 정산">
+            <i aria-hidden="true"></i><b>설계변경 정산</b>
+          </button>
+          <button class="rail-item" type="button" data-service="global" aria-label="해외 FED 견적">
+            <i aria-hidden="true"></i><b>해외/FED 견적</b>
+          </button>
         </div>
 
         <div class="hero-content">
-          <p class="eyebrow">VIET QS BUSINESS</p>
-          <h1 id="hero-title">수량산출과 내역서 작성의 기준을 새롭게.</h1>
+          <p class="eyebrow">CONCOST GROUP · VIET QS</p>
+          <h1 id="hero-title">하나의 회사가 만드는 견적의 기준.</h1>
           <p class="hero-copy">
-            Viet QS는 건설 프로젝트의 수량산출, BOQ 작성, 공사비 검토, CAD 기반 검증을
-            빠르고 명확한 산출근거로 제공합니다.
+            CONCOST의 30년 견적 노하우, 공사비닷컴의 공사비 데이터,
+            Viet QS의 베트남 실행 조직을 하나의 기준으로 연결합니다.
           </p>
           <div class="hero-actions">
             <a class="primary-link" href="#business">사업영역 보기</a>
-            <a class="ghost-link" href="#contact">견적 문의</a>
+            <a class="ghost-link" href="#group">그룹 구조 보기</a>
           </div>
         </div>
 
@@ -83,13 +94,92 @@
         </a>
       </section>
 
+      <section id="group" class="group-section" aria-labelledby="group-title">
+        <div class="section-heading">
+          <p class="eyebrow">ONE COMPANY</p>
+          <h2 id="group-title">CONCOST, 공사비닷컴, Viet QS는 하나의 견적 생태계입니다.</h2>
+          <p>
+            컨코스트가 축적한 견적 전문성, 공사비닷컴의 데이터 플랫폼,
+            Viet QS의 베트남 프로젝트 실행력을 한 회사의 연결된 서비스로 보여줍니다.
+          </p>
+        </div>
+
+        <div class="group-map" aria-label="Connected company brands">
+          <article class="brand-card">
+            <img src="assets/images/concost-logo.png" alt="CONCOST" />
+            <p class="brand-role">견적 컨설팅 본체</p>
+            <h3>대한민국 No.1 견적회사</h3>
+            <p>
+              지난 30년 동안 견적 한 길을 걸어온 전문 조직입니다. CAD 적산 프로그램과
+              공사비 컨설팅 역량을 기반으로 2018년 베트남 제1호 해외지사를 열었습니다.
+            </p>
+            <a href="http://con-cost.com/" target="_blank" rel="noreferrer">con-cost.com</a>
+          </article>
+
+          <article class="brand-card">
+            <img src="assets/images/gongsabi-logo.png" alt="GongSaBi.com" />
+            <p class="brand-role">공사비 정보 플랫폼</p>
+            <h3>30년 견적 데이터베이스</h3>
+            <p>
+              건물종류, 위치, 면적, 연도별로 설계가, 도급가, 실행가 공사비를 찾는
+              국내 최대 공사비 정보 플랫폼입니다.
+            </p>
+            <a href="http://gongsabi.com/" target="_blank" rel="noreferrer">gongsabi.com</a>
+          </article>
+
+          <article class="brand-card vietqs-card">
+            <img src="assets/images/vietqs-logo-stack.png" alt="Viet QS" />
+            <p class="brand-role">베트남 실행 브랜드</p>
+            <h3>Quantity Surveying in Vietnam</h3>
+            <p>
+              수량산출, BOQ/WBS 작성, 공사비 검토, 설계변경 정산을 베트남 현지
+              프로젝트 조건에 맞춰 빠르고 명확하게 수행합니다.
+            </p>
+            <a href="#contact">Viet QS 문의</a>
+          </article>
+        </div>
+
+        <div class="platform-band">
+          <div class="platform-copy">
+            <p class="eyebrow">GONGSABI.COM DATA</p>
+            <h3>공사비닷컴의 네 가지 서비스를 Viet QS의 판단 기준으로 연결합니다.</h3>
+            <p>
+              백업 소스의 메인 구조를 반영해 공사비 검색, 내역서 작성, 공사비 교육,
+              건설 장터를 Viet QS 소개 안에서 그룹 자산으로 표현했습니다.
+            </p>
+          </div>
+          <div class="platform-services" aria-label="GongSaBi service elements">
+            <article>
+              <img src="assets/images/gongsabi-search.jpg" alt="" aria-hidden="true" />
+              <h4>공사비 검색</h4>
+              <p>건물종류, 지역, 면적, 착공년도별 면적당 공사비 정보를 검색합니다.</p>
+            </article>
+            <article>
+              <img src="assets/images/gongsabi-report.jpg" alt="" aria-hidden="true" />
+              <h4>내역서 작성</h4>
+              <p>건축 및 골조 내역서, 공사기간 산정, 간접 공사비 계산을 지원합니다.</p>
+            </article>
+            <article>
+              <img src="assets/images/gongsabi-education.jpg" alt="" aria-hidden="true" />
+              <h4>공사비 교육</h4>
+              <p>건축견적 이야기 교재와 온·오프라인 교육으로 견적 전문가를 양성합니다.</p>
+            </article>
+            <article>
+              <img src="assets/images/gongsabi-market.jpg" alt="" aria-hidden="true" />
+              <h4>건설 장터</h4>
+              <p>건설 현장 간 자재 거래, 구인 구직, 견적 요청 정보를 연결합니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="business" class="business-section" aria-labelledby="business-title">
         <div class="section-heading">
           <p class="eyebrow">BUSINESS</p>
-          <h2 id="business-title">건설 견적 실무를 하나의 흐름으로 연결합니다.</h2>
+          <h2 id="business-title">CONCOST의 견적 실무를 Viet QS 서비스로 실행합니다.</h2>
           <p>
-            도면 검토부터 산출근거, BOQ, 정산 자료까지 프로젝트 단계에 맞춰 필요한
-            견적 실무를 구조화합니다.
+            도면 검토부터 원가계산서, BOQ, 설계변경, 해외/FED 견적까지
+            프로젝트 단계에 맞춰 필요한 견적 실무를 구조화합니다.
           </p>
         </div>
 
@@ -131,18 +221,23 @@
         <div class="business-grid" aria-label="Viet QS service cards">
           <article>
             <span>01</span>
-            <h3>Draft Estimate</h3>
-            <p>초기 도면 단계에서 사업성 검토에 필요한 수량과 공사비를 빠르게 산정합니다.</p>
+            <h3>Draft & Detail Estimate</h3>
+            <p>초기 도면부터 실시도면까지 사업성 검토와 발주용 내역에 필요한 수량을 산정합니다.</p>
           </article>
           <article>
             <span>02</span>
-            <h3>Site Quantity Check</h3>
-            <p>현장의 기존 물량을 CAD 적산 방식으로 검증하고 비교 내역을 제공합니다.</p>
+            <h3>Cost Statement</h3>
+            <p>직접공사비, 경비, 간접공사비를 포함한 원가계산서와 단가 대비표를 구성합니다.</p>
           </article>
           <article>
             <span>03</span>
-            <h3>Construction Claim</h3>
-            <p>공사비 정산, 변경, 분쟁 상황에서 제출 가능한 산출 자료를 정리합니다.</p>
+            <h3>Design Change</h3>
+            <p>당초와 변경 도면의 수량과 금액 차이를 비교해 정산과 클레임 근거를 정리합니다.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Overseas / FED BOQ</h3>
+            <p>CSI CODE, FED 양식, WBS 패키지 기준의 해외 프로젝트 산출근거를 작성합니다.</p>
           </article>
         </div>
       </section>
@@ -155,13 +250,15 @@
           <p class="eyebrow">CAD QS SYSTEM</p>
           <h2 id="cad-title">도면 위에서 산출 정보를 확인하고 검증합니다.</h2>
           <p>
-            CAD 도면에 산출 정보를 입력해 수량 추적, 변경 위치 확인, 정산 분쟁 방지까지
-            한 번에 확인하는 업무 방식을 Viet QS의 핵심 프로세스로 제안합니다.
+            20여 년 견적 경험을 바탕으로 만든 CAD 적산 방식을 Viet QS의 핵심 프로세스로
+            정리했습니다. 산출 수량, 위치, 변경 사항을 도면 위에서 확인해 검증 시간을 줄입니다.
           </p>
           <div class="cad-features">
             <span>산출 수량 확인</span>
             <span>산출정보 작성</span>
+            <span>간단 명령어 기반 입력</span>
             <span>도면 변경 추적</span>
+            <span>산출 값 검증</span>
             <span>정산 리스크 감소</span>
           </div>
         </div>
@@ -172,13 +269,14 @@
           <p class="eyebrow">PROJECT RECORD</p>
           <h2 id="projects-title">국내외 프로젝트 경험을 Viet QS의 실행력으로.</h2>
           <p>
-            기존 사이트의 실적 메시지를 Viet QS 브랜드에 맞춰 정리한 초안입니다.
-            실제 수치와 프로젝트명은 운영 데이터 확인 후 교체하면 됩니다.
+            CONCOST의 국내 견적 경험과 해외/FED 프로젝트 수행 기록을 Viet QS의
+            베트남 프로젝트 신뢰 지표로 연결합니다.
           </p>
         </div>
 
         <div class="metrics" aria-label="Project metrics">
-          <strong><span>2,500+</span> 국내공사 수행 경험</strong>
+          <strong><span>30</span> 년 견적 데이터 축적</strong>
+          <strong><span>2018</span> 베트남 제1호 해외지사</strong>
           <strong><span>25</span> 해외 프로젝트 국가</strong>
           <strong><span>200+</span> 해외 BOQ 작성 경험</strong>
         </div>
@@ -204,7 +302,7 @@
       <section id="contact" class="contact-section" aria-labelledby="contact-title">
         <div>
           <p class="eyebrow">CONTACT</p>
-          <h2 id="contact-title">프로젝트 도면과 조건을 보내주시면 산출 범위를 함께 정리합니다.</h2>
+          <h2 id="contact-title">CONCOST 그룹의 견적 기준으로 베트남 프로젝트 산출 범위를 정리합니다.</h2>
         </div>
         <div class="contact-actions">
           <a href="mailto:contact@vietqs.com">contact@vietqs.com</a>
@@ -215,7 +313,7 @@
 
     <footer class="site-footer">
       <img src="assets/images/vietqs-logo-wide.png" alt="Viet QS" />
-      <p>Quantity Surveying & Cost Intelligence for Vietnam Projects</p>
+      <p>CONCOST · GongSaBi.com · Viet QS</p>
       <small>Viet QS Co., Ltd. All rights reserved.</small>
     </footer>
 
