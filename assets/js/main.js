@@ -130,9 +130,9 @@ const i18n = {
         rail: "공사비 검토",
         aria: "공사비 검토",
         heroEyebrow: "GONGSABI.COM DATA · COST REVIEW",
-        heroTitle: "공사비 판단을 데이터로 정리합니다.",
+        heroTitle: "공사비 적정성 검토",
         heroCopy:
-          "공사비닷컴의 설계가, 도급가, 실행가 데이터와 CONCOST의 검토 기준을 연결해 발주 전후 비용 판단을 돕습니다.",
+          "실행 공사비와 설계 공사비를 비교·검토하고, 단가와 제비율 적용의 적정성을 분석하여 합리적인 공사비 기준을 제시합니다.",
         panelTitle: "공사비 검토",
         panelText: "설계가, 도급가, 실행가 기준으로 공사비 적정성을 검토합니다.",
         number: "02",
