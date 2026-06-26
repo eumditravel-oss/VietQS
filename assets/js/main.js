@@ -133,7 +133,7 @@ const i18n = {
         heroTitle: "공사비 판단을 데이터로 정리합니다.",
         heroCopy:
           "공사비닷컴의 설계가, 도급가, 실행가 데이터와 CONCOST의 검토 기준을 연결해 발주 전후 비용 판단을 돕습니다.",
-        panelTitle: "Cost Adequacy Review",
+        panelTitle: "공사비 검토",
         panelText: "설계가, 도급가, 실행가 기준으로 공사비 적정성을 검토합니다.",
         number: "02",
         title: "Construction cost review",
@@ -151,7 +151,7 @@ const i18n = {
         heroTitle: "설계변경의 차이를 근거로 보여줍니다.",
         heroCopy:
           "당초 도면과 변경 도면의 수량, 위치, 금액 차이를 비교해 정산과 클레임 대응에 필요한 자료를 만듭니다.",
-        panelTitle: "Design Change",
+        panelTitle: "설계변경 정산",
         panelText: "당초 도면과 변경 도면의 수량 차이를 비교해 정산 근거를 만듭니다.",
         number: "03",
         title: "Drawing change settlement",
@@ -169,7 +169,7 @@ const i18n = {
         heroTitle: "해외/FED 견적을 하나의 언어로 정리합니다.",
         heroCopy:
           "25개국 200개 이상 해외 프로젝트 경험을 바탕으로 CSI CODE, FED 양식, WBS 기준의 산출근거를 작성합니다.",
-        panelTitle: "Overseas / FED Estimate",
+        panelTitle: "해외/FED 견적",
         panelText: "CSI CODE, FED 양식, WBS 내역서 기준의 해외 프로젝트 견적을 지원합니다.",
         number: "04",
         title: "Overseas and FED estimating",
