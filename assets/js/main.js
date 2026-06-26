@@ -166,9 +166,9 @@ const i18n = {
         rail: "해외/FED 견적",
         aria: "해외 FED 견적",
         heroEyebrow: "VIET QS · OVERSEAS/FED",
-        heroTitle: "해외/FED 견적을 하나의 언어로 정리합니다.",
+        heroTitle: "해외·FED 공사 견적",
         heroCopy:
-          "25개국 200개 이상 해외 프로젝트 경험을 바탕으로 CSI CODE, FED 양식, WBS 기준의 산출근거를 작성합니다.",
+          "25개국 200개 이상의 해외 프로젝트 경험을 바탕으로, CSI Code 및 FED 양식에 따른 수량산출, BOQ 작성, WBS 내역서 작성을 수행합니다.",
         panelTitle: "해외/FED 견적",
         panelText: "CSI CODE, FED 양식, WBS 내역서 기준의 해외 프로젝트 견적을 지원합니다.",
         number: "04",
