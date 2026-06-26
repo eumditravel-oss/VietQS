@@ -25,9 +25,9 @@
       </nav>
 
       <div class="language-set" aria-label="Language selection">
-        <a href="#top" aria-current="true">KR</a>
-        <a href="#top">EN</a>
-        <a href="#top">VI</a>
+        <button class="lang-button active" type="button" data-lang="ko" aria-current="true">KOR</button>
+        <button class="lang-button" type="button" data-lang="en">EN</button>
+        <button class="lang-button" type="button" data-lang="vi">VIET</button>
       </div>
 
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
@@ -66,21 +66,21 @@
         </div>
 
         <div class="hero-content">
-          <p class="eyebrow">CONCOST GROUP · VIET QS</p>
-          <h1 id="hero-title">하나의 회사가 만드는 견적의 기준.</h1>
-          <p class="hero-copy">
+          <p class="eyebrow" data-hero-eyebrow>CONCOST GROUP · VIET QS</p>
+          <h1 id="hero-title" data-hero-title>하나의 회사가 만드는 견적의 기준.</h1>
+          <p class="hero-copy" data-hero-copy>
             CONCOST의 30년 견적 노하우, 공사비닷컴의 공사비 데이터,
             Viet QS의 베트남 실행 조직을 하나의 기준으로 연결합니다.
           </p>
           <div class="hero-actions">
-            <a class="primary-link" href="#business">사업영역 보기</a>
-            <a class="ghost-link" href="#group">그룹 구조 보기</a>
+            <a class="primary-link" href="#business" data-hero-primary>사업영역 보기</a>
+            <a class="ghost-link" href="#group" data-hero-secondary>그룹 구조 보기</a>
           </div>
         </div>
 
         <aside class="hero-panel" aria-label="Featured service">
           <img src="assets/images/vietqs-logo-stack.png" alt="" aria-hidden="true" />
-          <p class="panel-kicker">Selected service</p>
+          <p class="panel-kicker" data-panel-kicker>Selected service</p>
           <h2 data-service-title>Quantity Take-off</h2>
           <p data-service-text>
             도면과 시방서를 기반으로 정확한 수량산출서와 BOQ를 작성합니다.

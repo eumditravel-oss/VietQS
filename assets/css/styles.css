@@ -81,14 +81,14 @@ img {
 }
 
 .desktop-nav a,
-.language-set a {
+.language-set button {
   opacity: 0.78;
   transition: opacity 160ms ease, color 160ms ease;
 }
 
 .desktop-nav a:hover,
-.language-set a:hover,
-.language-set a[aria-current="true"] {
+.language-set button:hover,
+.language-set button[aria-current="true"] {
   color: var(--green-500);
   opacity: 1;
 }
@@ -99,6 +99,15 @@ img {
   align-items: center;
   font-size: 13px;
   font-weight: 800;
+}
+
+.language-set button {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
 }
 
 .menu-toggle {
@@ -169,6 +178,7 @@ img {
     linear-gradient(90deg, rgba(6, 27, 61, 0.42), rgba(6, 27, 61, 0.08) 54%, rgba(6, 27, 61, 0.7)),
     linear-gradient(0deg, rgba(6, 27, 61, 0.34), rgba(6, 27, 61, 0.05)),
     url("../images/hero-construction.jpg") center / cover;
+  transition: filter 180ms ease, opacity 180ms ease;
 }
 
 .hero::before {
@@ -289,6 +299,21 @@ img {
   font-size: clamp(16px, 1.38vw, 20px);
   line-height: 1.75;
   font-weight: 650;
+}
+
+.hero-content,
+.hero-panel,
+.service-copy,
+.service-image img {
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.hero.is-changing .hero-content,
+.hero.is-changing .hero-panel,
+.hero.is-changing .service-copy,
+.hero.is-changing .service-image img {
+  opacity: 0.72;
+  transform: translateY(6px);
 }
 
 .hero-actions {
@@ -918,7 +943,8 @@ img {
   }
 
   .language-set {
-    display: none;
+    gap: 10px;
+    font-size: 12px;
   }
 
   .brand {
