@@ -287,7 +287,7 @@ img {
   position: relative;
   z-index: 4;
   align-self: center;
-  max-width: 760px;
+  max-width: 900px;
   margin-left: clamp(26px, 28vw, 440px);
   padding: 140px 40px 110px 0;
 }
@@ -302,12 +302,12 @@ img {
 }
 
 .hero h1 {
-  max-width: 660px;
+  max-width: 900px;
   margin: 0;
-  font-size: clamp(48px, 6.2vw, 92px);
-  line-height: 1.05;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.18;
   font-weight: 900;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
   text-shadow: 0 8px 34px rgba(0, 0, 0, 0.36);
 }
 
@@ -455,29 +455,29 @@ img {
 }
 
 .section-heading {
-  display: grid;
-  grid-template-columns: minmax(220px, 420px) minmax(280px, 1fr);
-  gap: clamp(28px, 5vw, 78px);
-  align-items: end;
+  display: block;
   margin-bottom: 42px;
 }
 
 .section-heading h2,
 .cad-content h2,
 .contact-section h2 {
-  margin: 0;
+  margin: 0 0 24px;
   color: var(--blue-950);
-  font-size: clamp(32px, 4.8vw, 64px);
-  line-height: 1.12;
-  letter-spacing: 0;
+  font-size: clamp(28px, 3.6vw, 48px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: left;
 }
 
 .section-heading p:not(.eyebrow),
 .cad-content p {
   margin: 0;
+  max-width: 860px;
   color: var(--muted);
   font-size: 17px;
   line-height: 1.8;
+  text-align: left;
 }
 
 .group-section {
@@ -901,26 +901,80 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
 .contact-section {
   display: grid;
   grid-template-columns: minmax(280px, 1fr) auto;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
   color: var(--white);
-  background: linear-gradient(120deg, var(--blue-900), var(--blue-700) 58%, var(--green-600));
+  background: var(--blue-950);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 90, 168, 0.2), transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(104, 189, 42, 0.08), transparent 50%);
+  pointer-events: none;
 }
 
 .contact-section h2 {
   color: var(--white);
   max-width: 860px;
+  position: relative;
 }
 
 .contact-actions {
   display: grid;
-  gap: 12px;
+  gap: 14px;
+  position: relative;
 }
 
 .contact-actions a {
-  color: var(--blue-950);
-  background: var(--white);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 28px;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
   white-space: nowrap;
+  transition: all 280ms ease;
+  backdrop-filter: blur(4px);
+}
+
+.contact-actions a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.contact-actions a::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: currentColor;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.contact-actions a[href^="mailto"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/%3E%3Cpolyline points='22,6 12,13 2,6'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/%3E%3Cpolyline points='22,6 12,13 2,6'/%3E%3C/svg%3E");
+}
+
+.contact-actions a[href^="tel"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
 }
 
 .site-footer {

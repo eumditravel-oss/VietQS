@@ -123,7 +123,7 @@ const i18n = {
           "평면, 입면, 단면도와 실시도면을 검토해 산출근거와 내역서를 작성합니다. CONCOST의 CAD 적산 기준을 바탕으로 개산견적부터 정미 수량산출까지 단계별로 대응합니다.",
         items: ["개산견적 및 발주용 수량 작성", "정미 수량산출과 산출근거 정리", "층별, 부재별, 공종별 집계표 제공"],
         image: "assets/images/project-towers.jpg",
-        heroImage: "assets/images/gongsabi-market.jpg",
+        heroImage: "assets/images/hero-blueprint.png",
         imageAlt: "High-rise project rendering",
       },
       cost: {
@@ -141,7 +141,7 @@ const i18n = {
           "CAD 적산 시스템으로 산출한 물량에 적정 단가를 적용해 원가계산서와 비교 내역을 제공합니다. 직접공사비, 경비, 간접공사비를 포함해 발주 전후의 비용 판단을 돕습니다.",
         items: ["공종별 수량 및 단가 검토", "조달 단가와 조사 단가 비교", "원가계산서 및 단가 대비표 작성"],
         image: "assets/images/about-quantity.jpg",
-        heroImage: "assets/images/gongsabi-report.jpg",
+        heroImage: "assets/images/hero-modern-office.png",
         imageAlt: "Quantity surveying company introduction visual",
       },
       change: {
@@ -159,7 +159,7 @@ const i18n = {
           "당초와 변경 도면을 기준으로 수량과 금액 차이를 비교합니다. CAD 도면 위에서 변경 위치와 산출 값을 확인해 공사비 정산과 클레임 대응 근거를 구조화합니다.",
         items: ["당초/변경 수량 비교", "변경 내역서 작성", "정산 및 분쟁 방지 자료 정리"],
         image: "assets/images/drawing-estimate.jpg",
-        heroImage: "assets/images/drawing-estimate.jpg",
+        heroImage: "assets/images/hero-team-engineers.png",
         imageAlt: "Drawing review on desk",
       },
       global: {
@@ -177,7 +177,7 @@ const i18n = {
           "CONCOST가 수행해 온 25개국 200개 이상 해외 프로젝트 경험을 바탕으로 CSI CODE 기반 BOQ, FED 직발주 내역서, WBS 패키지 내역서를 구성합니다.",
         items: ["CSI CODE 기반 BOQ", "FED/YRP 양식 내역 작성", "WBS 패키지별 산출근거"],
         image: "assets/images/global-estimate.jpg",
-        heroImage: "assets/images/gongsabi-education.jpg",
+        heroImage: "assets/images/hero-global-site.png",
         imageAlt: "Global estimation concept",
       },
     },
@@ -294,7 +294,7 @@ const i18n = {
           "We review plans, elevations, sections, and detailed drawings to prepare take-off evidence and BOQ. From draft estimates to net quantity take-off, the work follows CONCOST's CAD-based estimating standard.",
         items: ["Draft estimate and tender quantity", "Net quantity take-off and evidence", "Floor, member, and trade summary tables"],
         image: "assets/images/project-towers.jpg",
-        heroImage: "assets/images/gongsabi-market.jpg",
+        heroImage: "assets/images/hero-blueprint.png",
         imageAlt: "High-rise project rendering",
       },
       cost: {
@@ -312,7 +312,7 @@ const i18n = {
           "Quantities from the CAD take-off system are combined with proper unit rates to provide cost statements and comparison reports, including direct cost, expenses, and indirect cost.",
         items: ["Trade quantity and unit-price review", "Procurement and market-rate comparison", "Cost statement and unit-price comparison"],
         image: "assets/images/about-quantity.jpg",
-        heroImage: "assets/images/gongsabi-report.jpg",
+        heroImage: "assets/images/hero-modern-office.png",
         imageAlt: "Quantity surveying company introduction visual",
       },
       change: {
@@ -330,7 +330,7 @@ const i18n = {
           "Original and revised drawings are compared by quantity and amount. CAD-based location and value checks structure the evidence needed for settlement and claim response.",
         items: ["Original/revised quantity comparison", "Change report writing", "Settlement and dispute-prevention evidence"],
         image: "assets/images/drawing-estimate.jpg",
-        heroImage: "assets/images/drawing-estimate.jpg",
+        heroImage: "assets/images/hero-team-engineers.png",
         imageAlt: "Drawing review on desk",
       },
       global: {
@@ -348,7 +348,7 @@ const i18n = {
           "Based on CONCOST's experience across more than 200 overseas projects in 25 countries, we build CSI CODE-based BOQ, FED direct-order reports, and WBS package estimates.",
         items: ["CSI CODE-based BOQ", "FED/YRP format estimates", "WBS package evidence"],
         image: "assets/images/global-estimate.jpg",
-        heroImage: "assets/images/gongsabi-education.jpg",
+        heroImage: "assets/images/hero-global-site.png",
         imageAlt: "Global estimation concept",
       },
     },
@@ -465,7 +465,7 @@ const i18n = {
           "Chúng tôi kiểm tra mặt bằng, mặt đứng, mặt cắt và bản vẽ chi tiết để lập căn cứ bóc tách và BOQ. Công việc đi từ dự toán sơ bộ đến khối lượng tinh theo chuẩn CAD của CONCOST.",
         items: ["Dự toán sơ bộ và khối lượng mời thầu", "Bóc tách khối lượng tinh và căn cứ", "Bảng tổng hợp theo tầng, cấu kiện và công tác"],
         image: "assets/images/project-towers.jpg",
-        heroImage: "assets/images/gongsabi-market.jpg",
+        heroImage: "assets/images/hero-blueprint.png",
         imageAlt: "High-rise project rendering",
       },
       cost: {
@@ -483,7 +483,7 @@ const i18n = {
           "Khối lượng từ hệ thống CAD take-off được kết hợp với đơn giá phù hợp để lập bảng giá thành và báo cáo so sánh, gồm chi phí trực tiếp, chi phí chung và chi phí gián tiếp.",
         items: ["Kiểm tra khối lượng và đơn giá theo công tác", "So sánh đơn giá mua sắm và giá thị trường", "Bảng giá thành và bảng so sánh đơn giá"],
         image: "assets/images/about-quantity.jpg",
-        heroImage: "assets/images/gongsabi-report.jpg",
+        heroImage: "assets/images/hero-modern-office.png",
         imageAlt: "Quantity surveying company introduction visual",
       },
       change: {
@@ -501,7 +501,7 @@ const i18n = {
           "Bản vẽ ban đầu và bản vẽ thay đổi được so sánh theo khối lượng và giá trị. Kiểm tra vị trí và giá trị trên CAD giúp chuẩn hóa căn cứ quyết toán và claim.",
         items: ["So sánh khối lượng ban đầu/thay đổi", "Lập báo cáo thay đổi", "Căn cứ giảm tranh chấp quyết toán"],
         image: "assets/images/drawing-estimate.jpg",
-        heroImage: "assets/images/drawing-estimate.jpg",
+        heroImage: "assets/images/hero-team-engineers.png",
         imageAlt: "Drawing review on desk",
       },
       global: {
@@ -519,7 +519,7 @@ const i18n = {
           "Dựa trên kinh nghiệm của CONCOST với hơn 200 dự án quốc tế tại 25 quốc gia, chúng tôi lập BOQ theo CSI CODE, hồ sơ FED direct-order và dự toán theo gói WBS.",
         items: ["BOQ theo CSI CODE", "Dự toán theo mẫu FED/YRP", "Căn cứ theo gói WBS"],
         image: "assets/images/global-estimate.jpg",
-        heroImage: "assets/images/gongsabi-education.jpg",
+        heroImage: "assets/images/hero-global-site.png",
         imageAlt: "Global estimation concept",
       },
     },
