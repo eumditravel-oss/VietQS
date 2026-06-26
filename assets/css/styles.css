@@ -1,9 +1,9 @@
 :root {
-  --blue-950: #061b3d;
-  --blue-900: #082a63;
+  --blue-950: #051329;
+  --blue-900: #081e3d;
   --blue-700: #005aa8;
   --blue-500: #0878c9;
-  --green-500: #68bd2a;
+  --green-500: #5ea825;
   --green-600: #18a94a;
   --orange-500: #f26a21;
   --ink: #111827;
@@ -11,7 +11,8 @@
   --line: rgba(255, 255, 255, 0.22);
   --paper: #f6f8fb;
   --white: #ffffff;
-  --shadow: 0 24px 70px rgba(6, 27, 61, 0.18);
+  --shadow: 0 30px 60px rgba(4, 15, 33, 0.06);
+  --shadow-hover: 0 40px 80px rgba(4, 15, 33, 0.12);
 }
 
 * {
@@ -29,6 +30,13 @@ body {
   background: var(--white);
   word-break: keep-all;
   overflow-wrap: break-word;
+  line-height: 1.75;
+  letter-spacing: -0.015em;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.03em;
+  font-weight: 800;
 }
 
 /* ===== Premium Scroll Animations (Samsung C&T style) ===== */
@@ -81,6 +89,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 img {
@@ -532,7 +541,7 @@ img {
 .cad-section,
 .projects-section,
 .contact-section {
-  padding: clamp(76px, 9vw, 132px) clamp(22px, 6vw, 88px);
+  padding: clamp(120px, 12vw, 180px) clamp(22px, 6vw, 88px);
   scroll-margin-top: 94px;
 }
 
@@ -850,6 +859,12 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
   min-height: 230px;
   padding: 32px;
   background: var(--paper);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.business-grid article:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
 }
 
 .business-grid span {
@@ -956,6 +971,12 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
   min-height: 210px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.95);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-panels article:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
 }
 
 .project-panels img {
