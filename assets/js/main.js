@@ -528,6 +528,8 @@ const i18n = {
 
 let currentLang = localStorage.getItem("vietqs-lang") || "ko";
 let currentService = "takeoff";
+let currentHeroIndex = 0;
+let isAnimating = false;
 
 function activeText() {
   return i18n[currentLang] || i18n.ko;
@@ -641,6 +643,7 @@ function renderTab(key, animate = true) {
   const data = text.services[key];
   if (!data) return;
   currentService = key;
+  currentHeroIndex = serviceKeys.indexOf(key);
 
   if (animate) hero.classList.add("is-changing");
 
@@ -732,6 +735,26 @@ railItems.forEach((item) => {
 langButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
+
+function handleHeroScroll(e) {
+  if (window.scrollY > 10) return; // Only hijack scroll when at the top
+
+  if (e.deltaY > 0 && currentHeroIndex < serviceKeys.length - 1) {
+    e.preventDefault();
+    if (isAnimating) return;
+    isAnimating = true;
+    renderTab(serviceKeys[currentHeroIndex + 1]);
+    setTimeout(() => { isAnimating = false; }, 1000);
+  } else if (e.deltaY < 0 && currentHeroIndex > 0) {
+    e.preventDefault();
+    if (isAnimating) return;
+    isAnimating = true;
+    renderTab(serviceKeys[currentHeroIndex - 1]);
+    setTimeout(() => { isAnimating = false; }, 1000);
+  }
+}
+
+window.addEventListener("wheel", handleHeroScroll, { passive: false });
 
 updateStaticText();
 renderTab(currentService, false);
