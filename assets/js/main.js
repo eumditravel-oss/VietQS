@@ -272,7 +272,7 @@ const i18n = {
     },
     contact: {
       eyebrow: "CONTACT",
-      title: "CONCOST Group is waiting for talents to build the future together.\nIf you are someone who wants to create better standards for the construction industry, please apply now.\nWe look forward to your interest and challenge.",
+      title: "CONCOST Group welcomes talents to build the future together.\nJoin us to create better standards for the construction industry.\nWe look forward to your application.",
     },
     footer: {
       line: "CONCOST · GongSaBi.com · Viet QS",
@@ -443,7 +443,7 @@ const i18n = {
     },
     contact: {
       eyebrow: "CONTACT",
-      title: "Tập đoàn CONCOST đang chờ đón những nhân tài cùng kiến tạo tương lai.\nNếu bạn là người muốn tạo ra những tiêu chuẩn tốt hơn cho ngành xây dựng, hãy ứng tuyển ngay hôm nay.\nChúng tôi mong chờ sự quan tâm và thử thách của bạn.",
+      title: "Tập đoàn CONCOST chào đón các nhân tài cùng kiến tạo tương lai.\nHãy cùng chúng tôi tạo ra tiêu chuẩn tốt hơn cho ngành xây dựng.\nChúng tôi mong chờ hồ sơ ứng tuyển của bạn.",
     },
     footer: {
       line: "CONCOST · GongSaBi.com · Viet QS",
