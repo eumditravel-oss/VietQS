@@ -8,7 +8,7 @@ const hero = document.querySelector(".hero");
 const heroBg = document.querySelector(".hero-bg");
 const metaDescription = document.querySelector('meta[name="description"]');
 
-const serviceKeys = ["takeoff", "cost", "change", "global"];
+const serviceKeys = ["takeoff", "cost", "change", "global", "bim"];
 
 const i18n = {
   ko: {
@@ -69,7 +69,7 @@ const i18n = {
       title: "CONCOST의 견적 실무를 Viet QS 서비스로 실행합니다.",
       body:
         "도면 검토부터 원가계산서, BOQ, 설계변경, 해외/FED 견적까지 프로젝트 단계에 맞춰 필요한 견적 실무를 구조화합니다.",
-      tabs: ["수량산출", "공사비 검토", "설계변경", "해외/FED 견적"],
+      tabs: ["수량산출", "공사비 검토", "설계변경", "해외/FED 견적", "구조 BIM"],
       cards: [
         ["01", "개산 및 실시 견적", "초기 도면부터 실시도면까지 사업성 검토와 발주용 내역에 필요한 수량을 산정합니다."],
         ["02", "원가계산 및 내역서", "직접공사비, 경비, 간접공사비를 포함한 원가계산서와 단가 대비표를 구성합니다."],
@@ -180,6 +180,24 @@ const i18n = {
         heroImage: "assets/images/hero-global-site.png",
         imageAlt: "Global estimation concept",
       },
+      bim: {
+        rail: "구조 BIM",
+        aria: "구조 BIM",
+        heroEyebrow: "VIET QS · STRUCTURAL BIM",
+        heroTitle: "BIM 기반 구조 모델링 및 산출",
+        heroCopy:
+          "2D 도면에 BIM을 활용하여 정밀한 구조 모델링과 오차 없는 수량 산출 근거를 제공합니다. BIM 전문팀의 기술력으로 시공 품질과 정산의 기준을 높입니다.",
+        panelTitle: "구조 BIM 산출",
+        panelText: "REVIT 기반 구조 모델링과 정확한 수량 산출을 통해 건설 프로젝트의 신뢰도를 높입니다.",
+        number: "05",
+        title: "구조 BIM 산출",
+        body:
+          "2D 도면에 BIM을 활용하여 구조 모델링과 산출근거를 제공합니다. 작업기간은 규모와 종류에 따라 5~20일 소요되며, BIM 전문팀이 REVIT을 활용해 모델링하고 고려전산 RC 8.0을 통해 물량을 산출합니다.",
+        items: ["BIM 구조 모델링 파일 제공 (전체 및 층별)", "집계표 및 수량 분석표 (총괄 집계, 평당 물량 등)", "주요 실적: 춘천시 약사동 주상복합 외 7건"],
+        image: "assets/images/project-bim.jpg",
+        heroImage: "assets/images/hero-bim.png",
+        imageAlt: "Structural BIM model",
+      },
     },
   },
   en: {
@@ -240,7 +258,7 @@ const i18n = {
       title: "Viet QS executes CONCOST's practical estimating workflow.",
       body:
         "From drawing review to cost statements, BOQ, design changes, and overseas/FED estimates, the workflow is structured for each project phase.",
-      tabs: ["Quantity Take-off", "Cost Review", "Design Change", "Overseas/FED"],
+      tabs: ["Quantity Take-off", "Cost Review", "Design Change", "Overseas/FED", "Structural BIM"],
       cards: [
         ["01", "Draft & Detail Estimate", "Estimate quantities for feasibility reviews and tender documents from early drawings to detailed drawings."],
         ["02", "Cost Statement", "Build cost statements and unit-price comparisons including direct cost, expenses, and indirect cost."],
@@ -350,6 +368,24 @@ const i18n = {
         image: "assets/images/global-estimate.jpg",
         heroImage: "assets/images/hero-global-site.png",
         imageAlt: "Global estimation concept",
+      },
+      bim: {
+        rail: "Structural BIM",
+        aria: "Structural BIM",
+        heroEyebrow: "VIET QS · STRUCTURAL BIM",
+        heroTitle: "BIM-based Structural Modeling",
+        heroCopy:
+          "We provide precise structural modeling and error-free quantity take-off evidence by utilizing BIM on 2D drawings. Elevate construction quality and settlement standards with our BIM expert team.",
+        panelTitle: "Structural BIM Take-off",
+        panelText: "Increase construction project reliability through REVIT-based structural modeling and accurate take-offs.",
+        number: "05",
+        title: "Structural BIM Take-off",
+        body:
+          "We provide structural modeling and take-off evidence utilizing BIM on 2D drawings. Work period takes 5~20 days depending on scale, utilizing REVIT for modeling and RC 8.0 for quantity extraction.",
+        items: ["BIM structural modeling files (overall & by floor)", "Summary tables and quantity analysis", "Major record: Chuncheon Yaksadong Complex and 7 others"],
+        image: "assets/images/project-bim.jpg",
+        heroImage: "assets/images/hero-bim.png",
+        imageAlt: "Structural BIM model",
       },
     },
   },
@@ -521,6 +557,24 @@ const i18n = {
         image: "assets/images/global-estimate.jpg",
         heroImage: "assets/images/hero-global-site.png",
         imageAlt: "Global estimation concept",
+      },
+      bim: {
+        rail: "BIM Kết cấu",
+        aria: "BIM Kết cấu",
+        heroEyebrow: "VIET QS · BIM KẾT CẤU",
+        heroTitle: "Mô hình hóa và bóc tách dựa trên BIM",
+        heroCopy:
+          "Chúng tôi cung cấp mô hình kết cấu chính xác và cơ sở bóc tách khối lượng không sai sót bằng cách ứng dụng BIM trên bản vẽ 2D. Nâng cao chất lượng thi công với đội ngũ chuyên gia BIM.",
+        panelTitle: "Bóc tách BIM Kết cấu",
+        panelText: "Tăng độ tin cậy của dự án xây dựng thông qua mô hình hóa kết cấu bằng REVIT và bóc tách chính xác.",
+        number: "05",
+        title: "Bóc tách BIM Kết cấu",
+        body:
+          "Cung cấp mô hình kết cấu và cơ sở bóc tách sử dụng BIM trên bản vẽ 2D. Thời gian làm việc từ 5~20 ngày tùy theo quy mô, sử dụng REVIT để tạo mô hình và RC 8.0 để xuất khối lượng.",
+        items: ["Cung cấp tệp mô hình kết cấu BIM", "Bảng tổng hợp và phân tích khối lượng", "Dự án tiêu biểu: Tổ hợp Chuncheon Yaksadong và 7 dự án khác"],
+        image: "assets/images/project-bim.jpg",
+        heroImage: "assets/images/hero-bim.png",
+        imageAlt: "Mô hình BIM kết cấu",
       },
     },
   },
