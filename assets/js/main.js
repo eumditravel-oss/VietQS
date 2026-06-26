@@ -101,7 +101,7 @@ const i18n = {
     },
     contact: {
       eyebrow: "CONTACT",
-      title: "CONCOST 그룹의 견적 기준으로 베트남 프로젝트 산출 범위를 정리합니다.",
+      title: "CONCOST 그룹은 미래를 함께 만들어갈 인재를 기다립니다.\n건설 산업의 더 나은 기준을 함께 만들어갈 분이라면 지금 지원해 주세요.\n여러분의 관심과 도전을 기다립니다.",
     },
     footer: {
       line: "CONCOST · GongSaBi.com · Viet QS",
@@ -272,7 +272,7 @@ const i18n = {
     },
     contact: {
       eyebrow: "CONTACT",
-      title: "Share your drawings and conditions. We will define the Vietnam project scope with CONCOST group standards.",
+      title: "CONCOST Group is waiting for talents to build the future together.\nIf you are someone who wants to create better standards for the construction industry, please apply now.\nWe look forward to your interest and challenge.",
     },
     footer: {
       line: "CONCOST · GongSaBi.com · Viet QS",
@@ -443,7 +443,7 @@ const i18n = {
     },
     contact: {
       eyebrow: "CONTACT",
-      title: "Gửi bản vẽ và điều kiện dự án. Chúng tôi sẽ xác định phạm vi theo chuẩn CONCOST group.",
+      title: "Tập đoàn CONCOST đang chờ đón những nhân tài cùng kiến tạo tương lai.\nNếu bạn là người muốn tạo ra những tiêu chuẩn tốt hơn cho ngành xây dựng, hãy ứng tuyển ngay hôm nay.\nChúng tôi mong chờ sự quan tâm và thử thách của bạn.",
     },
     footer: {
       line: "CONCOST · GongSaBi.com · Viet QS",

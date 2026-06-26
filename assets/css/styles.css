@@ -923,6 +923,7 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
   color: var(--white);
   max-width: 860px;
   position: relative;
+  white-space: pre-line;
 }
 
 .contact-actions {
