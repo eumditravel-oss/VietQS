@@ -54,7 +54,7 @@ const i18n = {
         },
       ],
       platformEyebrow: "GONGSABI.COM DATA",
-      platformTitle: "공사비 닷컴의 면적당 공사비 정보 검색 서비스",
+      platformTitle: "공사비 닷컴의<br>면적당 공사비 정보 검색 서비스",
       platformBody:
         "건물 종류, 면적, 지역, 착공연도를 선택하여 유사 프로젝트의 면적당 공사비 정보를 확인할 수 있습니다.",
       platformServices: [
@@ -119,7 +119,7 @@ const i18n = {
         panelTitle: "수량산출 및 내역 작성",
         panelText: "도면과 시방서를 바탕으로 정확한 수량산출서, 산출근거, 내역서를 작성합니다.",
         number: "01",
-        title: "Quantity take-off & BOQ",
+        title: "수량산출 및 내역 작성",
         body:
           "평면, 입면, 단면도와 실시도면을 검토해 산출근거와 내역서를 작성합니다. CONCOST의 CAD 적산 기준을 바탕으로 개산견적부터 정미 수량산출까지 단계별로 대응합니다.",
         items: ["개산견적 및 발주용 수량 작성", "정미 수량산출과 산출근거 정리", "층별, 부재별, 공종별 집계표 제공"],
@@ -137,7 +137,7 @@ const i18n = {
         panelTitle: "공사비 검토",
         panelText: "설계가, 도급가, 실행가 기준으로 공사비 적정성을 검토합니다.",
         number: "02",
-        title: "Construction cost review",
+        title: "공사비 검토",
         body:
           "CAD 적산 시스템으로 산출한 물량에 적정 단가를 적용해 원가계산서와 비교 내역을 제공합니다. 직접공사비, 경비, 간접공사비를 포함해 발주 전후의 비용 판단을 돕습니다.",
         items: ["공종별 수량 및 단가 검토", "조달 단가와 조사 단가 비교", "원가계산서 및 단가 대비표 작성"],
@@ -155,7 +155,7 @@ const i18n = {
         panelTitle: "설계변경 정산",
         panelText: "당초 도면과 변경 도면의 수량 차이를 비교해 정산 근거를 만듭니다.",
         number: "03",
-        title: "Drawing change settlement",
+        title: "설계변경 정산",
         body:
           "당초와 변경 도면을 기준으로 수량과 금액 차이를 비교합니다. CAD 도면 위에서 변경 위치와 산출 값을 확인해 공사비 정산과 클레임 대응 근거를 구조화합니다.",
         items: ["당초/변경 수량 비교", "변경 내역서 작성", "정산 및 분쟁 방지 자료 정리"],
@@ -196,7 +196,7 @@ const i18n = {
           "2D 도면에 BIM을 활용하여 구조 모델링과 산출근거를 제공합니다. 작업기간은 규모와 종류에 따라 5~20일 소요되며, BIM 전문팀이 REVIT을 활용해 모델링하고 고려전산 RC 8.0을 통해 물량을 산출합니다.",
         items: ["BIM 구조 모델링 파일 제공 (전체 및 층별)", "집계표 및 수량 분석표 (총괄 집계, 평당 물량 등)", "주요 실적: 춘천시 약사동 주상복합 외 7건"],
         image: "assets/images/project-bim.jpg",
-        heroImage: "assets/images/hero-bim.png",
+        heroImage: "assets/images/hero-bim.jpg",
         imageAlt: "Structural BIM model",
       },
     },
@@ -594,7 +594,7 @@ function activeText() {
 
 function setText(selector, value) {
   const element = document.querySelector(selector);
-  if (element) element.textContent = value;
+  if (element) element.innerHTML = value;
 }
 
 function setTextList(selector, values) {
