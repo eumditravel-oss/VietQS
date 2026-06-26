@@ -759,29 +759,55 @@ window.addEventListener("wheel", handleHeroScroll, { passive: false });
 updateStaticText();
 renderTab(currentService, false);
 
-// Scroll Animations
-const observerOptions = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.15
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
+// ===== Premium Scroll Animations (Samsung C&T style) =====
+const scrollObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      entry.target.classList.add('is-visible');
     } else {
-      entry.target.classList.remove('visible');
+      entry.target.classList.remove('is-visible');
     }
   });
-}, observerOptions);
+}, { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
 
-// Add reveal classes dynamically
-document.querySelectorAll('.hero-content, .hero-panel, .section-heading, .platform-copy, .service-tabs, .service-copy, .service-image, .cad-visual, .cad-content, .contact-section > div').forEach(el => el.classList.add('reveal'));
-document.querySelectorAll('.brand-card').forEach((el, i) => { el.classList.add('reveal', `delay-${(i+1)*100}`); });
-document.querySelectorAll('.platform-services article').forEach((el, i) => { el.classList.add('reveal', `delay-${(i+1)*100}`); });
-document.querySelectorAll('.business-grid article').forEach((el, i) => { el.classList.add('reveal', `delay-${(i%4+1)*100}`); });
-document.querySelectorAll('.project-panels article').forEach((el, i) => { el.classList.add('reveal', `delay-${(i+1)*100}`); });
-document.querySelectorAll('.metrics strong').forEach((el, i) => { el.classList.add('reveal', `delay-${(i+1)*100}`); });
+// Apply fade-up to section headings, content blocks
+document.querySelectorAll('.section-heading, .platform-copy, .service-tabs, .service-copy, .service-image, .cad-visual, .cad-content, .contact-section > div, .hero-panel').forEach(el => {
+  el.classList.add('fade-up');
+  scrollObserver.observe(el);
+});
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+// Stagger: brand cards
+document.querySelectorAll('.brand-card').forEach((el, i) => {
+  el.classList.add('fade-up', `stagger-${i + 1}`);
+  scrollObserver.observe(el);
+});
+
+// Stagger: platform services
+document.querySelectorAll('.platform-services article').forEach((el, i) => {
+  el.classList.add('fade-up', `stagger-${i + 1}`);
+  scrollObserver.observe(el);
+});
+
+// Stagger: business grid cards
+document.querySelectorAll('.business-grid article').forEach((el, i) => {
+  el.classList.add('fade-up', `stagger-${(i % 4) + 1}`);
+  scrollObserver.observe(el);
+});
+
+// Stagger: project panels
+document.querySelectorAll('.project-panels article').forEach((el, i) => {
+  el.classList.add('fade-up', `stagger-${i + 1}`);
+  scrollObserver.observe(el);
+});
+
+// Stagger: metrics
+document.querySelectorAll('.metrics strong').forEach((el, i) => {
+  el.classList.add('fade-up', `stagger-${i + 1}`);
+  scrollObserver.observe(el);
+});
+
+// Stagger: CAD features
+document.querySelectorAll('.cad-features span').forEach((el, i) => {
+  el.classList.add('fade-up', `stagger-${(i % 6) + 1}`);
+  scrollObserver.observe(el);
+});
