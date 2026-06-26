@@ -114,7 +114,7 @@ const i18n = {
         heroEyebrow: "CONCOST GROUP · QUANTITY TAKE-OFF",
         heroTitle: "수량산출의 기준을 다시 세웁니다.",
         heroCopy:
-          "CONCOST와 Viet QS는 양사의 전문성과 실무 경험을 공유하며, 더 나은 결과물을 제공하기 위해 최선을 다하고 있습니다.",
+          "CONCOST와 Viet QS는 검증된 CAD 기준을 바탕으로 정확하고 상세한 수량을 산출합니다.",
         panelTitle: "수량산출 및 내역 작성",
         panelText: "도면과 시방서를 바탕으로 정확한 수량산출서, 산출근거, 내역서를 작성합니다.",
         number: "01",
