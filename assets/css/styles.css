@@ -58,8 +58,9 @@ img {
 .site-header.menu-open {
   padding-top: 18px;
   padding-bottom: 18px;
-  background: rgba(6, 27, 61, 0.92);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  color: var(--blue-950);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 40px rgba(6, 27, 61, 0.12);
   backdrop-filter: blur(14px);
 }
 
@@ -135,6 +136,11 @@ img {
   letter-spacing: 0.08em;
 }
 
+.site-header.scrolled .menu-toggle,
+.site-header.menu-open .menu-toggle {
+  color: var(--blue-950);
+}
+
 .mobile-menu {
   position: fixed;
   z-index: 45;
@@ -173,11 +179,11 @@ img {
 
 .hero-bg {
   position: absolute;
-  inset: 0 25vw 0 0;
+  inset: 0 max(310px, 28vw) 0 0;
   background:
-    linear-gradient(90deg, rgba(6, 27, 61, 0.42), rgba(6, 27, 61, 0.08) 54%, rgba(6, 27, 61, 0.7)),
-    linear-gradient(0deg, rgba(6, 27, 61, 0.34), rgba(6, 27, 61, 0.05)),
-    url("../images/hero-construction.jpg") center / cover;
+    linear-gradient(90deg, rgba(6, 27, 61, 0.38), rgba(6, 27, 61, 0.08) 54%, rgba(6, 27, 61, 0.42)),
+    linear-gradient(0deg, rgba(6, 27, 61, 0.22), rgba(6, 27, 61, 0.02)),
+    url("../images/gongsabi-market.jpg") center / cover;
   transition: filter 180ms ease, opacity 180ms ease;
 }
 
@@ -196,7 +202,8 @@ img {
   content: "";
   position: absolute;
   inset: 0 0 0 auto;
-  width: min(34vw, 460px);
+  z-index: 2;
+  width: max(310px, 28vw);
   background: linear-gradient(180deg, rgba(4, 13, 31, 0.94), rgba(7, 29, 60, 0.86));
 }
 
@@ -245,6 +252,7 @@ img {
   font-size: 14px;
   font-weight: 850;
   line-height: 1.35;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
 }
 
 .rail-item.active {
@@ -299,6 +307,7 @@ img {
   font-size: clamp(16px, 1.38vw, 20px);
   line-height: 1.75;
   font-weight: 650;
+  text-shadow: 0 5px 22px rgba(0, 0, 0, 0.42);
 }
 
 .hero-content,
@@ -353,12 +362,7 @@ img {
   flex-direction: column;
   justify-content: center;
   min-height: 100%;
-  padding: 146px clamp(26px, 4vw, 58px) 80px;
-}
-
-.hero-panel img {
-  width: min(170px, 44vw);
-  margin-bottom: clamp(34px, 8vh, 86px);
+  padding: 146px clamp(32px, 4.3vw, 74px) 80px;
 }
 
 .panel-kicker {
@@ -451,6 +455,30 @@ img {
   background: var(--white);
 }
 
+.group-section .section-heading {
+  display: block;
+  margin-bottom: 42px;
+}
+
+.group-section .section-heading .eyebrow {
+  margin-bottom: 28px;
+}
+
+.group-section .section-heading h2 {
+  max-width: none;
+  text-align: left;
+}
+
+.group-section .section-heading p:not(.eyebrow) {
+  max-width: none;
+  margin-top: 28px;
+}
+
+html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
+  font-size: 16px;
+  white-space: nowrap;
+}
+
 .group-map {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -519,13 +547,20 @@ img {
 .brand-card a {
   width: fit-content;
   margin-top: auto;
-  padding-top: 26px;
-  color: var(--blue-700);
+  min-height: 44px;
+  padding: 0 18px;
+  color: var(--white);
+  border-radius: 4px;
+  background: var(--blue-700);
   font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .brand-card.vietqs-card a {
-  color: var(--green-500);
+  color: var(--blue-950);
+  background: var(--green-500);
 }
 
 .platform-band {
@@ -920,10 +955,6 @@ img {
     background: rgba(4, 17, 36, 0.72);
   }
 
-  .hero-panel img {
-    display: none;
-  }
-
   .section-heading,
   .service-showcase,
   .platform-band,
@@ -934,6 +965,10 @@ img {
 
   .group-map {
     grid-template-columns: 1fr;
+  }
+
+  html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
+    white-space: normal;
   }
 }
 
@@ -964,11 +999,13 @@ img {
   }
 
   .business-section,
+  .group-section,
   .cad-section,
   .projects-section,
   .contact-section {
     padding: 72px 18px;
   }
+
 
   .business-grid,
   .platform-services,

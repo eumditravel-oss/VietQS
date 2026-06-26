@@ -36,21 +36,21 @@ const i18n = {
           title: "대한민국 No.1 견적회사",
           body:
             "지난 30년 동안 견적 한 길을 걸어온 전문 조직입니다. CAD 적산 프로그램과 공사비 컨설팅 역량을 기반으로 2018년 베트남 제1호 해외지사를 열었습니다.",
-          link: "con-cost.com",
+          link: "바로가기",
         },
         {
           role: "공사비 정보 플랫폼",
           title: "30년 견적 데이터베이스",
           body:
             "건물종류, 위치, 면적, 연도별로 설계가, 도급가, 실행가 공사비를 찾는 국내 최대 공사비 정보 플랫폼입니다.",
-          link: "gongsabi.com",
+          link: "바로가기",
         },
         {
           role: "베트남 실행 브랜드",
           title: "베트남 Quantity Surveying",
           body:
             "수량산출, BOQ/WBS 작성, 공사비 검토, 설계변경 정산을 베트남 현지 프로젝트 조건에 맞춰 빠르고 명확하게 수행합니다.",
-          link: "Viet QS 문의",
+          link: "문의하기",
         },
       ],
       platformEyebrow: "GONGSABI.COM DATA",
@@ -123,7 +123,7 @@ const i18n = {
           "평면, 입면, 단면도와 실시도면을 검토해 산출근거와 내역서를 작성합니다. CONCOST의 CAD 적산 기준을 바탕으로 개산견적부터 정미 수량산출까지 단계별로 대응합니다.",
         items: ["개산견적 및 발주용 수량 작성", "정미 수량산출과 산출근거 정리", "층별, 부재별, 공종별 집계표 제공"],
         image: "assets/images/project-towers.jpg",
-        heroImage: "assets/images/hero-construction.jpg",
+        heroImage: "assets/images/gongsabi-market.jpg",
         imageAlt: "High-rise project rendering",
       },
       cost: {
@@ -141,7 +141,7 @@ const i18n = {
           "CAD 적산 시스템으로 산출한 물량에 적정 단가를 적용해 원가계산서와 비교 내역을 제공합니다. 직접공사비, 경비, 간접공사비를 포함해 발주 전후의 비용 판단을 돕습니다.",
         items: ["공종별 수량 및 단가 검토", "조달 단가와 조사 단가 비교", "원가계산서 및 단가 대비표 작성"],
         image: "assets/images/about-quantity.jpg",
-        heroImage: "assets/images/gongsabi-search.jpg",
+        heroImage: "assets/images/gongsabi-report.jpg",
         imageAlt: "Quantity surveying company introduction visual",
       },
       change: {
@@ -177,7 +177,7 @@ const i18n = {
           "CONCOST가 수행해 온 25개국 200개 이상 해외 프로젝트 경험을 바탕으로 CSI CODE 기반 BOQ, FED 직발주 내역서, WBS 패키지 내역서를 구성합니다.",
         items: ["CSI CODE 기반 BOQ", "FED/YRP 양식 내역 작성", "WBS 패키지별 산출근거"],
         image: "assets/images/global-estimate.jpg",
-        heroImage: "assets/images/global-estimate.jpg",
+        heroImage: "assets/images/gongsabi-education.jpg",
         imageAlt: "Global estimation concept",
       },
     },
@@ -207,21 +207,21 @@ const i18n = {
           title: "Korea's No.1 estimating company",
           body:
             "CONCOST has focused on estimating for 30 years. Its CAD quantity take-off program and cost consulting capability led to the first overseas branch in Vietnam in 2018.",
-          link: "con-cost.com",
+          link: "Open site",
         },
         {
           role: "Cost data platform",
           title: "30 years of estimating data",
           body:
             "GongSaBi.com is a major Korean construction cost platform where users search design, contract, and execution costs by building type, location, area, and year.",
-          link: "gongsabi.com",
+          link: "Open site",
         },
         {
           role: "Vietnam execution brand",
           title: "Quantity Surveying in Vietnam",
           body:
             "Viet QS executes quantity take-off, BOQ/WBS, cost review, and design-change settlement for Vietnam project conditions.",
-          link: "Contact Viet QS",
+          link: "Contact us",
         },
       ],
       platformEyebrow: "GONGSABI.COM DATA",
@@ -294,7 +294,7 @@ const i18n = {
           "We review plans, elevations, sections, and detailed drawings to prepare take-off evidence and BOQ. From draft estimates to net quantity take-off, the work follows CONCOST's CAD-based estimating standard.",
         items: ["Draft estimate and tender quantity", "Net quantity take-off and evidence", "Floor, member, and trade summary tables"],
         image: "assets/images/project-towers.jpg",
-        heroImage: "assets/images/hero-construction.jpg",
+        heroImage: "assets/images/gongsabi-market.jpg",
         imageAlt: "High-rise project rendering",
       },
       cost: {
@@ -312,7 +312,7 @@ const i18n = {
           "Quantities from the CAD take-off system are combined with proper unit rates to provide cost statements and comparison reports, including direct cost, expenses, and indirect cost.",
         items: ["Trade quantity and unit-price review", "Procurement and market-rate comparison", "Cost statement and unit-price comparison"],
         image: "assets/images/about-quantity.jpg",
-        heroImage: "assets/images/gongsabi-search.jpg",
+        heroImage: "assets/images/gongsabi-report.jpg",
         imageAlt: "Quantity surveying company introduction visual",
       },
       change: {
@@ -348,7 +348,7 @@ const i18n = {
           "Based on CONCOST's experience across more than 200 overseas projects in 25 countries, we build CSI CODE-based BOQ, FED direct-order reports, and WBS package estimates.",
         items: ["CSI CODE-based BOQ", "FED/YRP format estimates", "WBS package evidence"],
         image: "assets/images/global-estimate.jpg",
-        heroImage: "assets/images/global-estimate.jpg",
+        heroImage: "assets/images/gongsabi-education.jpg",
         imageAlt: "Global estimation concept",
       },
     },
@@ -378,21 +378,21 @@ const i18n = {
           title: "Công ty dự toán No.1 tại Hàn Quốc",
           body:
             "CONCOST theo đuổi lĩnh vực dự toán trong 30 năm. Nền tảng CAD quantity take-off và năng lực tư vấn chi phí đã mở chi nhánh nước ngoài đầu tiên tại Việt Nam năm 2018.",
-          link: "con-cost.com",
+          link: "Truy cập",
         },
         {
           role: "Nền tảng dữ liệu chi phí",
           title: "Cơ sở dữ liệu dự toán 30 năm",
           body:
             "GongSaBi.com cho phép tra cứu chi phí thiết kế, giá nhận thầu và giá thực hiện theo loại công trình, vị trí, diện tích và năm.",
-          link: "gongsabi.com",
+          link: "Truy cập",
         },
         {
           role: "Thương hiệu triển khai tại Việt Nam",
           title: "Quantity Surveying tại Việt Nam",
           body:
             "Viet QS thực hiện bóc tách khối lượng, BOQ/WBS, kiểm tra chi phí và quyết toán thay đổi thiết kế theo điều kiện dự án tại Việt Nam.",
-          link: "Liên hệ Viet QS",
+          link: "Liên hệ",
         },
       ],
       platformEyebrow: "GONGSABI.COM DATA",
@@ -465,7 +465,7 @@ const i18n = {
           "Chúng tôi kiểm tra mặt bằng, mặt đứng, mặt cắt và bản vẽ chi tiết để lập căn cứ bóc tách và BOQ. Công việc đi từ dự toán sơ bộ đến khối lượng tinh theo chuẩn CAD của CONCOST.",
         items: ["Dự toán sơ bộ và khối lượng mời thầu", "Bóc tách khối lượng tinh và căn cứ", "Bảng tổng hợp theo tầng, cấu kiện và công tác"],
         image: "assets/images/project-towers.jpg",
-        heroImage: "assets/images/hero-construction.jpg",
+        heroImage: "assets/images/gongsabi-market.jpg",
         imageAlt: "High-rise project rendering",
       },
       cost: {
@@ -483,7 +483,7 @@ const i18n = {
           "Khối lượng từ hệ thống CAD take-off được kết hợp với đơn giá phù hợp để lập bảng giá thành và báo cáo so sánh, gồm chi phí trực tiếp, chi phí chung và chi phí gián tiếp.",
         items: ["Kiểm tra khối lượng và đơn giá theo công tác", "So sánh đơn giá mua sắm và giá thị trường", "Bảng giá thành và bảng so sánh đơn giá"],
         image: "assets/images/about-quantity.jpg",
-        heroImage: "assets/images/gongsabi-search.jpg",
+        heroImage: "assets/images/gongsabi-report.jpg",
         imageAlt: "Quantity surveying company introduction visual",
       },
       change: {
@@ -519,7 +519,7 @@ const i18n = {
           "Dựa trên kinh nghiệm của CONCOST với hơn 200 dự án quốc tế tại 25 quốc gia, chúng tôi lập BOQ theo CSI CODE, hồ sơ FED direct-order và dự toán theo gói WBS.",
         items: ["BOQ theo CSI CODE", "Dự toán theo mẫu FED/YRP", "Căn cứ theo gói WBS"],
         image: "assets/images/global-estimate.jpg",
-        heroImage: "assets/images/global-estimate.jpg",
+        heroImage: "assets/images/gongsabi-education.jpg",
         imageAlt: "Global estimation concept",
       },
     },
@@ -545,7 +545,7 @@ function setTextList(selector, values) {
 }
 
 function setHeroBackground(image) {
-  heroBg.style.background = `linear-gradient(90deg, rgba(6, 27, 61, 0.42), rgba(6, 27, 61, 0.08) 54%, rgba(6, 27, 61, 0.7)), linear-gradient(0deg, rgba(6, 27, 61, 0.34), rgba(6, 27, 61, 0.05)), url("${image}") center / cover`;
+  heroBg.style.background = `linear-gradient(90deg, rgba(6, 27, 61, 0.38), rgba(6, 27, 61, 0.08) 54%, rgba(6, 27, 61, 0.42)), linear-gradient(0deg, rgba(6, 27, 61, 0.22), rgba(6, 27, 61, 0.02)), url("${image}") center / cover`;
 }
 
 function updateStaticText() {
