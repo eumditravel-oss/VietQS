@@ -244,7 +244,7 @@ const i18n = {
         },
       ],
       platformEyebrow: "GONGSABI.COM DATA",
-      platformTitle: "Four GongSaBi.com services become decision data for Viet QS.",
+      platformTitle: "Four GongSaBi.com services become<br>decision data for Viet QS.",
       platformBody:
         "The structure from the backup source is reflected as group assets: cost search, report writing, cost education, and construction marketplace.",
       platformServices: [
@@ -386,7 +386,7 @@ const i18n = {
           "We provide structural modeling and take-off evidence utilizing BIM on 2D drawings. Work period takes 5~20 days depending on scale, utilizing REVIT for modeling and RC 8.0 for quantity extraction.",
         items: ["BIM structural modeling files (overall & by floor)", "Summary tables and quantity analysis", "Major record: Chuncheon Yaksadong Complex and 7 others"],
         image: "assets/images/project-bim.jpg",
-        heroImage: "assets/images/hero-bim.png",
+        heroImage: "assets/images/hero-bim.jpg",
         imageAlt: "Structural BIM model",
       },
     },
@@ -434,7 +434,7 @@ const i18n = {
         },
       ],
       platformEyebrow: "GONGSABI.COM DATA",
-      platformTitle: "Bốn dịch vụ của GongSaBi.com trở thành dữ liệu quyết định cho Viet QS.",
+      platformTitle: "Bốn dịch vụ của GongSaBi.com trở thành<br>dữ liệu quyết định cho Viet QS.",
       platformBody:
         "Cấu trúc từ nguồn backup được phản ánh như tài sản chung của tập đoàn: tra cứu chi phí, lập bảng biểu, đào tạo chi phí và sàn thông tin xây dựng.",
       platformServices: [
@@ -496,10 +496,10 @@ const i18n = {
         heroTitle: "Chuẩn mới cho bóc tách khối lượng.",
         heroCopy:
           "Kinh nghiệm CAD take-off của CONCOST và đội ngũ Viet QS tại Việt Nam kết nối bản vẽ, căn cứ bóc tách và BOQ trong một quy trình.",
-        panelTitle: "Quantity Take-off",
+        panelTitle: "Bóc tách khối lượng",
         panelText: "Lập bảng khối lượng, căn cứ bóc tách và BOQ từ bản vẽ và thuyết minh kỹ thuật.",
         number: "01",
-        title: "Quantity take-off & BOQ",
+        title: "Bóc tách khối lượng & BOQ",
         body:
           "Chúng tôi kiểm tra mặt bằng, mặt đứng, mặt cắt và bản vẽ chi tiết để lập căn cứ bóc tách và BOQ. Công việc đi từ dự toán sơ bộ đến khối lượng tinh theo chuẩn CAD của CONCOST.",
         items: ["Dự toán sơ bộ và khối lượng mời thầu", "Bóc tách khối lượng tinh và căn cứ", "Bảng tổng hợp theo tầng, cấu kiện và công tác"],
@@ -514,10 +514,10 @@ const i18n = {
         heroTitle: "Quyết định chi phí dựa trên dữ liệu.",
         heroCopy:
           "Dữ liệu giá thiết kế, giá nhận thầu và giá thực hiện của GongSaBi.com được kết nối với chuẩn kiểm tra của CONCOST.",
-        panelTitle: "Cost Adequacy Review",
+        panelTitle: "Kiểm tra chi phí",
         panelText: "Kiểm tra tính hợp lý của chi phí theo giá thiết kế, giá nhận thầu và giá thực hiện.",
         number: "02",
-        title: "Construction cost review",
+        title: "Kiểm tra chi phí",
         body:
           "Khối lượng từ hệ thống CAD take-off được kết hợp với đơn giá phù hợp để lập bảng giá thành và báo cáo so sánh, gồm chi phí trực tiếp, chi phí chung và chi phí gián tiếp.",
         items: ["Kiểm tra khối lượng và đơn giá theo công tác", "So sánh đơn giá mua sắm và giá thị trường", "Bảng giá thành và bảng so sánh đơn giá"],
@@ -532,10 +532,10 @@ const i18n = {
         heroTitle: "Thay đổi thiết kế được chứng minh rõ ràng.",
         heroCopy:
           "Chúng tôi so sánh bản vẽ ban đầu và bản vẽ thay đổi theo khối lượng, vị trí và chi phí để chuẩn bị căn cứ quyết toán và claim.",
-        panelTitle: "Design Change",
+        panelTitle: "Thay đổi thiết kế",
         panelText: "So sánh chênh lệch khối lượng giữa bản vẽ ban đầu và bản vẽ thay đổi.",
         number: "03",
-        title: "Drawing change settlement",
+        title: "Quyết toán thay đổi thiết kế",
         body:
           "Bản vẽ ban đầu và bản vẽ thay đổi được so sánh theo khối lượng và giá trị. Kiểm tra vị trí và giá trị trên CAD giúp chuẩn hóa căn cứ quyết toán và claim.",
         items: ["So sánh khối lượng ban đầu/thay đổi", "Lập báo cáo thay đổi", "Căn cứ giảm tranh chấp quyết toán"],
@@ -550,10 +550,10 @@ const i18n = {
         heroTitle: "Dự toán quốc tế/FED trong một ngôn ngữ rõ ràng.",
         heroCopy:
           "Dựa trên hơn 200 dự án quốc tế tại 25 quốc gia, chúng tôi lập căn cứ dự toán theo CSI CODE, mẫu FED và chuẩn WBS.",
-        panelTitle: "Overseas / FED Estimate",
+        panelTitle: "Dự toán Quốc tế / FED",
         panelText: "Hỗ trợ dự toán quốc tế theo CSI CODE, mẫu FED và báo cáo WBS.",
         number: "04",
-        title: "Overseas and FED estimating",
+        title: "Dự toán Quốc tế và FED",
         body:
           "Dựa trên kinh nghiệm của CONCOST với hơn 200 dự án quốc tế tại 25 quốc gia, chúng tôi lập BOQ theo CSI CODE, hồ sơ FED direct-order và dự toán theo gói WBS.",
         items: ["BOQ theo CSI CODE", "Dự toán theo mẫu FED/YRP", "Căn cứ theo gói WBS"],
@@ -576,7 +576,7 @@ const i18n = {
           "Cung cấp mô hình kết cấu và cơ sở bóc tách sử dụng BIM trên bản vẽ 2D. Thời gian làm việc từ 5~20 ngày tùy theo quy mô, sử dụng REVIT để tạo mô hình và RC 8.0 để xuất khối lượng.",
         items: ["Cung cấp tệp mô hình kết cấu BIM", "Bảng tổng hợp và phân tích khối lượng", "Dự án tiêu biểu: Tổ hợp Chuncheon Yaksadong và 7 dự án khác"],
         image: "assets/images/project-bim.jpg",
-        heroImage: "assets/images/hero-bim.png",
+        heroImage: "assets/images/hero-bim.jpg",
         imageAlt: "Mô hình BIM kết cấu",
       },
     },
