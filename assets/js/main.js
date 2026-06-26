@@ -476,8 +476,8 @@ const i18n = {
         ["200+", "hồ sơ BOQ quốc tế"],
       ],
       panels: [
-        ["Overseas BOQ", "Hỗ trợ BOQ quốc tế theo CSI CODE và bóc tách khối lượng theo gói."],
-        ["FED / WBS Estimate", "Tổ chức căn cứ dự toán theo mẫu FED và báo cáo WBS."],
+        ["BOQ Quốc tế", "Hỗ trợ BOQ quốc tế theo CSI CODE và bóc tách khối lượng theo gói."],
+        ["Dự toán FED / WBS", "Tổ chức căn cứ dự toán theo mẫu FED và báo cáo WBS."],
       ],
     },
     contact: {
