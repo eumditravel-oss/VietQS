@@ -25,7 +25,7 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  font-family: "Pretendard", "Noto Sans KR", "Segoe UI", Arial, sans-serif;
+  font-family: "Be Vietnam Pro", "Pretendard", "Noto Sans KR", "Segoe UI", Arial, sans-serif;
   background: var(--white);
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -359,19 +359,56 @@ img {
   text-shadow: 0 5px 22px rgba(0, 0, 0, 0.42);
 }
 
-.hero-content,
-.hero-panel,
-.service-copy,
-.service-image img {
-  transition: opacity 160ms ease, transform 160ms ease;
+/* ===== PPT-style Directional Slide Transition ===== */
+.hero-bg {
+  transition: none;
 }
 
-.hero.is-changing .hero-content,
-.hero.is-changing .hero-panel,
-.hero.is-changing .service-copy,
-.hero.is-changing .service-image img {
-  opacity: 0.72;
-  transform: translateY(6px);
+.hero-bg.slide-enter-from-bottom {
+  transform: translateY(100%);
+}
+
+.hero-bg.slide-enter-from-top {
+  transform: translateY(-100%);
+}
+
+.hero-bg.slide-enter-active {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateY(0);
+}
+
+.hero-bg-clone {
+  position: absolute;
+  inset: 0 max(310px, 28vw) 0 0;
+  z-index: 1;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-bg-clone.slide-exit-up {
+  transform: translateY(-100%);
+}
+
+.hero-bg-clone.slide-exit-down {
+  transform: translateY(100%);
+}
+
+/* Hero content slide transition */
+.hero-content {
+  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero.is-sliding .hero-content {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.hero-panel {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hero.is-sliding .hero-panel {
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .hero-actions {
@@ -415,11 +452,7 @@ img {
 }
 
 .panel-kicker {
-  margin: 0 0 15px;
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 13px;
-  font-weight: 800;
-  text-transform: uppercase;
+  display: none;
 }
 
 .hero-panel h2 {

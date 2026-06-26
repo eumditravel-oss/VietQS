@@ -114,9 +114,9 @@ const i18n = {
         heroEyebrow: "CONCOST GROUP · QUANTITY TAKE-OFF",
         heroTitle: "수량산출의 기준을 다시 세웁니다.",
         heroCopy:
-          "CONCOST의 CAD 적산 경험과 Viet QS의 현지 실행 조직이 도면, 산출근거, BOQ를 하나의 흐름으로 정리합니다.",
-        panelTitle: "Quantity Take-off",
-        panelText: "도면과 시방서를 기반으로 수량산출서, 산출근거, BOQ를 작성합니다.",
+          "CONCOST와 Viet QS는 양사의 전문성과 실무 경험을 공유하며, 더 나은 결과물을 제공하기 위해 최선을 다하고 있습니다.",
+        panelTitle: "수량산출 및 내역 작성",
+        panelText: "도면과 시방서를 바탕으로 정확한 수량산출서, 산출근거, 내역서를 작성합니다.",
         number: "01",
         title: "Quantity take-off & BOQ",
         body:
@@ -546,8 +546,44 @@ function setTextList(selector, values) {
   });
 }
 
-function setHeroBackground(image) {
+function setHeroBackground(image, direction = "down", animate = true) {
+  if (!animate) {
+    heroBg.style.background = `linear-gradient(90deg, rgba(6, 27, 61, 0.38), rgba(6, 27, 61, 0.08) 54%, rgba(6, 27, 61, 0.42)), linear-gradient(0deg, rgba(6, 27, 61, 0.22), rgba(6, 27, 61, 0.02)), url("${image}") center / cover`;
+    return;
+  }
+
+  // Create clone of current background
+  const oldBg = heroBg.cloneNode(true);
+  oldBg.className = "hero-bg-clone";
+  hero.insertBefore(oldBg, heroBg);
+
+  // Prepare new background out of viewport
   heroBg.style.background = `linear-gradient(90deg, rgba(6, 27, 61, 0.38), rgba(6, 27, 61, 0.08) 54%, rgba(6, 27, 61, 0.42)), linear-gradient(0deg, rgba(6, 27, 61, 0.22), rgba(6, 27, 61, 0.02)), url("${image}") center / cover`;
+  heroBg.className = "hero-bg";
+  if (direction === "down") {
+    heroBg.classList.add("slide-enter-from-bottom");
+  } else {
+    heroBg.classList.add("slide-enter-from-top");
+  }
+
+  // Force reflow
+  void heroBg.offsetHeight;
+
+  // Trigger animations
+  heroBg.classList.remove("slide-enter-from-bottom", "slide-enter-from-top");
+  heroBg.classList.add("slide-enter-active");
+
+  if (direction === "down") {
+    oldBg.classList.add("slide-exit-up");
+  } else {
+    oldBg.classList.add("slide-exit-down");
+  }
+
+  // Cleanup
+  setTimeout(() => {
+    oldBg.remove();
+    heroBg.classList.remove("slide-enter-active");
+  }, 800);
 }
 
 function updateStaticText() {
@@ -638,21 +674,21 @@ function updateStaticText() {
   menuToggle.setAttribute("aria-label", menuToggle.getAttribute("aria-expanded") === "true" ? text.menuClose : text.menuOpen);
 }
 
-function renderTab(key, animate = true) {
+function renderTab(key, animate = true, direction = "down") {
   const text = activeText();
   const data = text.services[key];
   if (!data) return;
   currentService = key;
   currentHeroIndex = serviceKeys.indexOf(key);
 
-  if (animate) hero.classList.add("is-changing");
+  if (animate) hero.classList.add("is-sliding");
 
   window.setTimeout(
     () => {
       setText("[data-hero-eyebrow]", data.heroEyebrow);
       setText("[data-hero-title]", data.heroTitle);
       setText("[data-hero-copy]", data.heroCopy);
-      setHeroBackground(data.heroImage);
+      setHeroBackground(data.heroImage, direction, animate);
 
       setText("[data-tab-number]", data.number);
       setText("[data-tab-title]", data.title);
@@ -686,9 +722,9 @@ function renderTab(key, animate = true) {
         item.classList.toggle("active", item.dataset.service === key);
       });
 
-      hero.classList.remove("is-changing");
+      hero.classList.remove("is-sliding");
     },
-    animate ? 80 : 0
+    animate ? 400 : 0
   );
 }
 
@@ -737,20 +773,28 @@ langButtons.forEach((button) => {
 });
 
 function handleHeroScroll(e) {
-  if (window.scrollY > 10) return; // Only hijack scroll when at the top
+  if (window.scrollY > 10) return; // Only hijack scroll when exactly at the top
 
-  if (e.deltaY > 0 && currentHeroIndex < serviceKeys.length - 1) {
-    e.preventDefault();
-    if (isAnimating) return;
-    isAnimating = true;
-    renderTab(serviceKeys[currentHeroIndex + 1]);
-    setTimeout(() => { isAnimating = false; }, 1000);
-  } else if (e.deltaY < 0 && currentHeroIndex > 0) {
-    e.preventDefault();
-    if (isAnimating) return;
-    isAnimating = true;
-    renderTab(serviceKeys[currentHeroIndex - 1]);
-    setTimeout(() => { isAnimating = false; }, 1000);
+  if (e.deltaY > 0) {
+    // Scrolling down
+    if (currentHeroIndex < serviceKeys.length - 1) {
+      e.preventDefault();
+      if (isAnimating) return;
+      isAnimating = true;
+      renderTab(serviceKeys[currentHeroIndex + 1], true, "down");
+      setTimeout(() => { isAnimating = false; }, 1200); // Wait for transition to fully complete + buffer
+    } else {
+      // Allow default scroll down when at the last banner
+    }
+  } else if (e.deltaY < 0) {
+    // Scrolling up
+    if (currentHeroIndex > 0) {
+      e.preventDefault();
+      if (isAnimating) return;
+      isAnimating = true;
+      renderTab(serviceKeys[currentHeroIndex - 1], true, "up");
+      setTimeout(() => { isAnimating = false; }, 1200);
+    }
   }
 }
 
