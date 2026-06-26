@@ -86,8 +86,8 @@ const i18n = {
     },
     projects: {
       eyebrow: "PROJECT RECORD",
-      title: "국내외 프로젝트 경험을 Viet QS의 실행력으로.",
-      body: "CONCOST의 국내 견적 경험과 해외/FED 프로젝트 수행 기록을 Viet QS의 베트남 프로젝트 신뢰 지표로 연결합니다.",
+      title: "국내외 견적 경험과 베트남 수행 역량의 결합",
+      body: "CONCOST가 축적한 국내 견적 전문성과 해외·FED 프로젝트 수행 경험을 Viet QS와 공유하여, 베트남 프로젝트에 최적화된 공사비 산출 서비스를 제공합니다.<br>수량산출부터 BOQ/WBS 작성, 공사비 검토, 설계변경 정산까지 일관된 기준으로 수행 품질을 높입니다.",
       metrics: [
         ["30", "년 견적 데이터 축적"],
         ["2018", "베트남 제1호 해외지사"],
@@ -95,8 +95,8 @@ const i18n = {
         ["200+", "해외 BOQ 작성 경험"],
       ],
       panels: [
-        ["Overseas BOQ", "CSI CODE 기반 해외공사 BOQ 작성과 패키지별 물량 산출을 지원합니다."],
-        ["FED / WBS Estimate", "FED 양식과 WBS 내역서 작성에 맞춘 산출근거를 체계적으로 구성합니다."],
+        ["해외 BOQ", "CSI CODE 기반 해외공사 BOQ 작성과 패키지별 물량 산출을 지원합니다."],
+        ["FED / WBS 내역서", "FED 양식과 WBS 내역서 작성에 맞춘 산출근거를 체계적으로 구성합니다."],
       ],
     },
     contact: {
