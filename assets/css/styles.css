@@ -1111,7 +1111,14 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
 
 
 /* ==========================================================================
-   Responsive Web (Tablet & Mobile) Media Queries
+   Swipe Indicator (데스크탑에서는 기본 숨김)
+   ========================================================================== */
+.swipe-indicator {
+  display: none; /* 데스크탑에서는 숨김 — 모바일 미디어 쿼리에서 활성화 */
+}
+
+/* ==========================================================================
+   Responsive Web — Tablet & Mobile Media Queries
    ========================================================================== */
 
 /* 1. 태블릿 해상도 (1024px 이하) */
@@ -1123,7 +1130,7 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
   .desktop-nav {
     display: none;
   }
-  
+
   .hero {
     grid-template-columns: 1fr;
     min-height: 100dvh;
@@ -1142,7 +1149,7 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
     padding: 120px clamp(20px, 5vw, 40px) 100px;
     align-self: center;
   }
-  
+
   .group-map {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1154,108 +1161,248 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
 
 /* 2. 모바일 해상도 (768px 이하) */
 @media screen and (max-width: 768px) {
+
+  /* ── 글로벌 오버플로우 방지 ── */
+  html, body {
+    overflow-x: hidden;
+  }
   body {
-    line-height: 1.6;
+    line-height: 1.65;
   }
-  
-  h1, h2, h3, p, span, a, button {
-    word-break: keep-all !important;
-  }
-
-  .hero h1 {
-    font-size: clamp(28px, 8vw, 36px);
-    line-height: 1.3;
+  * {
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
-  .hero-copy {
-    font-size: 15px;
-  }
-
-  .section-heading h2,
-  .cad-content h2,
-  .contact-section h2 {
-    font-size: clamp(24px, 7vw, 30px);
-  }
-
+  /* ── 모든 섹션 컨테이너 좌우 안전 여백 ── */
   .group-section,
   .business-section,
   .cad-section,
   .projects-section,
   .contact-section {
-    padding: 80px 20px calc(40px + env(safe-area-inset-bottom));
+    padding: 72px 20px calc(36px + env(safe-area-inset-bottom));
+    box-sizing: border-box;
   }
 
-  .group-map,
-  .platform-services,
-  .business-grid,
-  .project-panels,
-  .metrics {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .service-tabs {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .tab-button {
-    width: 100%;
-    text-align: center;
-  }
-
-  .primary-link,
-  .ghost-link,
-  .tab-button,
-  .brand-card a,
-  .contact-actions a,
-  .menu-toggle {
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .section-rail {
-    display: none;
-  }
-  
-  .scroll-indicator {
-    bottom: calc(20px + env(safe-area-inset-bottom));
-  }
-
-  /* 헤더 및 로고 모바일 최적화 */
+  /* ── 헤더 & 로고 ── */
   .site-header {
-    padding: 18px;
+    padding: 14px 16px;
   }
   .brand {
-    min-width: 132px;
-    width: 148px;
+    min-width: 120px;
+    width: 140px;
   }
   .language-set {
-    gap: 10px;
-    font-size: 12px;
+    gap: 8px;
+    font-size: 11px;
   }
 
-  /* 기존 white-space: nowrap 해제 (한글 줄바꿈 정상화) */
+  /* ── 히어로 배너 타이포그래피 ── */
+  .hero h1 {
+    font-size: clamp(24px, 7.5vw, 34px);
+    line-height: 1.35;
+  }
+  .hero h1::after {
+    width: 40px;
+    height: 2px;
+    margin: 18px 0 20px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+  .hero-copy {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .hero-content {
+    padding: 110px 20px 100px;
+  }
+
+  /* ── 히어로 배너 버튼 터치 최적화 ── */
+  .hero-actions {
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .primary-link,
+  .ghost-link {
+    min-height: 48px;
+    padding: 0 20px;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+
+  /* ── 마우스 스크롤 안내 숨김 + 스와이프 안내 표시 ── */
+  .scroll-indicator {
+    display: none !important;
+  }
+  .swipe-indicator {
+    display: flex !important;
+    position: absolute;
+    z-index: 6;
+    bottom: calc(28px + env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .swipe-hand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    animation: swipeHint 2.4s ease-in-out infinite;
+  }
+  .swipe-arrows {
+    display: flex;
+    gap: 2px;
+  }
+  .swipe-arrow-left,
+  .swipe-arrow-right {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1;
+  }
+  .swipe-arrow-left {
+    animation: arrowLeft 2.4s ease-in-out infinite;
+  }
+  .swipe-arrow-right {
+    animation: arrowRight 2.4s ease-in-out infinite;
+  }
+  .swipe-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  @keyframes swipeHint {
+    0%, 100% { transform: translateX(0); }
+    30%      { transform: translateX(12px); }
+    60%      { transform: translateX(-12px); }
+  }
+  @keyframes arrowLeft {
+    0%, 100% { opacity: 0.4; transform: translateX(0); }
+    60%      { opacity: 1;   transform: translateX(-6px); }
+  }
+  @keyframes arrowRight {
+    0%, 100% { opacity: 0.4; transform: translateX(0); }
+    30%      { opacity: 1;   transform: translateX(6px); }
+  }
+
+  /* ── 섹션 제목 & 본문 타이포그래피 ── */
+  .section-heading h2,
+  .cad-content h2,
+  .contact-section h2 {
+    font-size: clamp(22px, 6.5vw, 28px);
+    line-height: 1.35;
+  }
+  .section-heading p:not(.eyebrow),
+  .cad-content p,
+  .platform-copy p:not(.eyebrow) {
+    font-size: 14px;
+    line-height: 1.75;
+  }
   html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
     white-space: normal;
   }
 
-  /* 프로젝트 패널 및 이미지 모바일 세부 조정 */
-  .project-panels article {
-    grid-template-columns: 1fr;
+  /* ── 그룹 섹션 카드 1열 ── */
+  .group-map {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
-  .project-panels img {
-    height: 210px;
+  .brand-card {
+    min-height: auto;
+    padding: 24px 20px;
   }
-  .service-image img,
-  .cad-visual img {
-    min-height: 280px;
+  .brand-card h3 {
+    font-size: clamp(20px, 5.5vw, 26px);
+  }
+  .brand-card p:not(.brand-role) {
+    font-size: 14px;
+  }
+  .brand-card a {
+    min-height: 44px;
+    font-size: 14px;
   }
 
-  /* CAD 섹션 1열 변환 */
+  /* ── 플랫폼 밴드 1열 ── */
+  .platform-band {
+    grid-template-columns: 1fr;
+    padding: 32px 20px;
+  }
+  .platform-copy h3 {
+    font-size: clamp(22px, 6vw, 28px);
+  }
+  .platform-services {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .platform-services article {
+    min-height: auto;
+  }
+  .platform-services h4 {
+    font-size: 18px;
+    margin: 16px 16px 8px;
+  }
+  .platform-services p {
+    font-size: 13px;
+    margin: 0 16px 16px;
+  }
+
+  /* ── 비즈니스 섹션 ── */
+  .service-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 4px;
+  }
+  .tab-button {
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 13px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .service-showcase {
+    grid-template-columns: 1fr;
+  }
+  .service-copy {
+    padding: 28px 20px;
+  }
+  .service-number {
+    font-size: 42px;
+    margin-bottom: 16px;
+  }
+  .service-copy h3 {
+    font-size: clamp(22px, 6vw, 28px);
+  }
+  .service-copy p:not(.service-number) {
+    font-size: 14px;
+  }
+  .business-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .business-grid article {
+    padding: 24px 20px;
+  }
+  .business-grid article h3 {
+    font-size: 18px;
+  }
+  .business-grid article p {
+    font-size: 14px;
+  }
+
+  /* ── CAD 섹션 1열 ── */
   .cad-section {
     display: flex;
     flex-direction: column;
@@ -1263,20 +1410,70 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
   .cad-features {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+  }
+  .cad-features span {
+    font-size: 14px;
+    padding: 10px 14px;
   }
 
-  /* Contact 액션 버튼 세로 배치 */
+  /* ── 프로젝트 섹션 ── */
+  .metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .metrics strong {
+    font-size: 15px;
+  }
+  .metrics span {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+  .project-panels {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .project-panels article {
+    grid-template-columns: 1fr;
+  }
+  .project-panels img {
+    height: 200px;
+  }
+
+  /* ── Contact 섹션 ── */
+  .contact-section h2 {
+    font-size: clamp(20px, 6vw, 26px);
+  }
   .contact-actions {
     flex-direction: column;
     gap: 12px;
   }
   .contact-actions a {
     width: 100%;
+    min-height: 48px;
+    font-size: 14px;
   }
 
-  /* 카드 최소 높이 해제 (모바일에서 자연스러운 콘텐츠 높이) */
-  .brand-card {
-    min-height: auto;
+  /* ── 이미지 모바일 높이 ── */
+  .service-image img,
+  .cad-visual img {
+    min-height: 240px;
+  }
+
+  /* ── 좌측 레일 & 모바일 불필요 요소 숨김 ── */
+  .section-rail {
+    display: none;
+  }
+
+  /* ── 모든 인터랙티브 요소 터치 타겟 확보 ── */
+  .menu-toggle {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* ── 푸터 ── */
+  .site-footer {
+    padding: 36px 20px calc(20px + env(safe-area-inset-bottom));
   }
 }

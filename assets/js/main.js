@@ -830,7 +830,7 @@ langButtons.forEach((button) => {
 });
 
 function handleHeroScroll(e) {
-  // 모바일 해상도(768px 이하)에서는 강제 휠 스크롤 로직을 무효화하고 네이티브 스크롤 허용
+  // 모바일 해상도(768px 이하)에서는 데스크탑 휠 스크롤 배너 전환을 완전 비활성화
   if (window.innerWidth <= 768) {
     return;
   }
@@ -844,7 +844,7 @@ function handleHeroScroll(e) {
       if (isAnimating) return;
       isAnimating = true;
       renderTab(serviceKeys[currentHeroIndex + 1], true, "down");
-      setTimeout(() => { isAnimating = false; }, 1200); // Wait for transition to fully complete + buffer
+      setTimeout(() => { isAnimating = false; }, 1200);
     } else {
       // Allow default scroll down when at the last banner
     }
@@ -861,6 +861,51 @@ function handleHeroScroll(e) {
 }
 
 window.addEventListener("wheel", handleHeroScroll, { passive: false });
+
+// ===== 모바일 터치 스와이프 — 히어로 배너 좌우 전환 =====
+(function initMobileSwipe() {
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+  const SWIPE_THRESHOLD = 50; // 최소 50px 이동해야 스와이프로 인식
+
+  hero.addEventListener("touchstart", function (e) {
+    if (window.innerWidth > 768) return;
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  hero.addEventListener("touchend", function (e) {
+    if (window.innerWidth > 768) return;
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+
+    const diffX = touchStartX - touchEndX; // 양수 = 좌로 스와이프(다음), 음수 = 우로 스와이프(이전)
+    const diffY = Math.abs(touchStartY - touchEndY);
+
+    // 수평 이동이 수직 이동보다 크고, 임계값을 넘길 때만 배너 전환
+    if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(diffX) > diffY) {
+      if (isAnimating) return;
+
+      if (diffX > 0) {
+        // 좌로 스와이프 → 다음 배너
+        if (currentHeroIndex < serviceKeys.length - 1) {
+          isAnimating = true;
+          renderTab(serviceKeys[currentHeroIndex + 1], true, "down");
+          setTimeout(() => { isAnimating = false; }, 1200);
+        }
+      } else {
+        // 우로 스와이프 → 이전 배너
+        if (currentHeroIndex > 0) {
+          isAnimating = true;
+          renderTab(serviceKeys[currentHeroIndex - 1], true, "up");
+          setTimeout(() => { isAnimating = false; }, 1200);
+        }
+      }
+    }
+  }, { passive: true });
+})();
 
 updateStaticText();
 renderTab(currentService, false);
