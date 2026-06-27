@@ -1109,113 +1109,174 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
   color: #91a4be;
 }
 
-@media (max-width: 1060px) {
-  .site-header {
-    grid-template-columns: minmax(150px, 1fr) auto auto;
-  }
 
+/* ==========================================================================
+   Responsive Web (Tablet & Mobile) Media Queries
+   ========================================================================== */
+
+/* 1. 태블릿 해상도 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+  }
   .desktop-nav {
     display: none;
   }
-
+  
   .hero {
     grid-template-columns: 1fr;
+    min-height: 100dvh;
   }
-
-  .hero-bg {
+  .hero::after {
+    display: none;
+  }
+  .hero-bg, .hero-bg-clone {
     inset: 0;
   }
+  .hero-panel {
+    display: none;
+  }
+  .hero-content {
+    margin-left: 0;
+    padding: 120px clamp(20px, 5vw, 40px) 100px;
+    align-self: center;
+  }
+  
+  .group-map {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .platform-band,
+  .service-showcase {
+    grid-template-columns: 1fr;
+  }
+}
 
-  .hero::after {
+/* 2. 모바일 해상도 (768px 이하) */
+@media screen and (max-width: 768px) {
+  body {
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, p, span, a, button {
+    word-break: keep-all !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1.3;
+  }
+
+  .hero-copy {
+    font-size: 15px;
+  }
+
+  .section-heading h2,
+  .cad-content h2,
+  .contact-section h2 {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+  .group-section,
+  .business-section,
+  .cad-section,
+  .projects-section,
+  .contact-section {
+    padding: 80px 20px calc(40px + env(safe-area-inset-bottom));
+  }
+
+  .group-map,
+  .platform-services,
+  .business-grid,
+  .project-panels,
+  .metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .service-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .tab-button {
     width: 100%;
-    background: linear-gradient(180deg, rgba(6, 27, 61, 0.12), rgba(6, 27, 61, 0.82));
+    text-align: center;
+  }
+
+  .primary-link,
+  .ghost-link,
+  .tab-button,
+  .brand-card a,
+  .contact-actions a,
+  .menu-toggle {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .section-rail {
     display: none;
   }
-
-  .hero-content {
-    margin-left: 0;
-    padding: 168px 28px 40px;
+  
+  .scroll-indicator {
+    bottom: calc(20px + env(safe-area-inset-bottom));
   }
 
-  .hero-panel {
-    min-height: auto;
-    padding: 26px 28px 90px;
-    background: rgba(4, 17, 36, 0.72);
-  }
-
-  .section-heading,
-  .service-showcase,
-  .platform-band,
-  .cad-section,
-  .contact-section {
-    grid-template-columns: 1fr;
-  }
-
-  .group-map {
-    grid-template-columns: 1fr;
-  }
-
-  html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
-    white-space: normal;
-  }
-}
-
-@media (max-width: 760px) {
+  /* 헤더 및 로고 모바일 최적화 */
   .site-header {
     padding: 18px;
   }
-
+  .brand {
+    min-width: 132px;
+    width: 148px;
+  }
   .language-set {
     gap: 10px;
     font-size: 12px;
   }
 
-  .brand {
-    min-width: 132px;
-    width: 148px;
+  /* 기존 white-space: nowrap 해제 (한글 줄바꿈 정상화) */
+  html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
+    white-space: normal;
   }
 
-  .hero h1 {
-    font-size: clamp(42px, 13vw, 64px);
-  }
-
-  .hero-copy,
-  .section-heading p:not(.eyebrow),
-  .cad-content p,
-  .service-copy p:not(.service-number) {
-    font-size: 16px;
-  }
-
-  .business-section,
-  .group-section,
-  .cad-section,
-  .projects-section,
-  .contact-section {
-    padding: 72px 18px;
-  }
-
-
-  .business-grid,
-  .platform-services,
-  .metrics,
-  .project-panels,
-  .cad-features {
-    grid-template-columns: 1fr;
-  }
-
+  /* 프로젝트 패널 및 이미지 모바일 세부 조정 */
   .project-panels article {
     grid-template-columns: 1fr;
   }
-
   .project-panels img {
     height: 210px;
   }
-
   .service-image img,
   .cad-visual img {
     min-height: 280px;
+  }
+
+  /* CAD 섹션 1열 변환 */
+  .cad-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .cad-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Contact 액션 버튼 세로 배치 */
+  .contact-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .contact-actions a {
+    width: 100%;
+  }
+
+  /* 카드 최소 높이 해제 (모바일에서 자연스러운 콘텐츠 높이) */
+  .brand-card {
+    min-height: auto;
   }
 }

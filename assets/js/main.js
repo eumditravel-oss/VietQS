@@ -830,6 +830,11 @@ langButtons.forEach((button) => {
 });
 
 function handleHeroScroll(e) {
+  // 모바일 해상도(768px 이하)에서는 강제 휠 스크롤 로직을 무효화하고 네이티브 스크롤 허용
+  if (window.innerWidth <= 768) {
+    return;
+  }
+
   if (window.scrollY > 10) return; // Only hijack scroll when exactly at the top
 
   if (e.deltaY > 0) {
