@@ -229,7 +229,7 @@ img {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(310px, 28vw);
-  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
   color: var(--white);
   background: var(--blue-950);
@@ -1363,6 +1363,10 @@ html[lang="ko"] .group-section .section-heading p:not(.eyebrow) {
     -webkit-overflow-scrolling: touch;
     gap: 8px;
     padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .service-tabs::-webkit-scrollbar {
+    display: none;
   }
   .tab-button {
     min-height: 44px;

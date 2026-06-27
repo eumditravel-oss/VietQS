@@ -862,6 +862,10 @@ function handleHeroScroll(e) {
 
 window.addEventListener("wheel", handleHeroScroll, { passive: false });
 
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 // ===== 모바일 터치 스와이프 — 히어로 배너 좌우 전환 =====
 (function initMobileSwipe() {
   let touchStartX = 0;
@@ -876,10 +880,34 @@ window.addEventListener("wheel", handleHeroScroll, { passive: false });
     touchStartY = e.changedTouches[0].screenY;
   }, { passive: true });
 
+  // 모바일 터치 이동 중 기본 스크롤(세로)과 수평 스와이프가 겹치며 덜컹거리는 문제 방지
+  hero.addEventListener("touchmove", function (e) {
+    if (window.innerWidth > 768) return;
+    const currentX = e.changedTouches[0].screenX;
+    const currentY = e.changedTouches[0].screenY;
+    const diffX = Math.abs(touchStartX - currentX);
+    const diffY = Math.abs(touchStartY - currentY);
+
+    // [중요] 최상단에서 아래로 당기는 'Pull-to-refresh' 동작인 경우, 우리의 터치 이벤트 방어 무시 (Early return)
+    if (window.scrollY <= 0 && currentY > touchStartY) {
+      return; 
+    }
+
+    // 좌우(수평) 스와이프 의도가 세로 이동보다 강할 때만 브라우저 스크롤 억제
+    if (diffX > diffY) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
   hero.addEventListener("touchend", function (e) {
     if (window.innerWidth > 768) return;
     touchEndX = e.changedTouches[0].screenX;
     touchEndY = e.changedTouches[0].screenY;
+
+    // [중요] Pull-to-refresh 동작 감지 시, 배너 전환(스와이프) 로직 무시
+    if (window.scrollY <= 0 && touchEndY > touchStartY) {
+      return;
+    }
 
     const diffX = touchStartX - touchEndX; // 양수 = 좌로 스와이프(다음), 음수 = 우로 스와이프(이전)
     const diffY = Math.abs(touchStartY - touchEndY);
