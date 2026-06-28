@@ -49,7 +49,7 @@ const i18n = {
           role: "베트남 실행 브랜드",
           title: "베트남 Quantity Surveying",
           body:
-            "수량산출, BOQ/WBS 작성, 공사비 검토, 설계변경 정산을 베트남 현지 프로젝트 조건에 맞춰 빠르고 명확하게 수행합니다.",
+            "수량산출, BOQ/WBS 작성, 공사비 검토, 설계변경 정산을 프로젝트 조건에 맞춰 빠르고 명확하게 수행합니다.",
           link: "지원하기",
         },
       ],
@@ -175,7 +175,7 @@ const i18n = {
         number: "04",
         title: "해외 및 FED 견적",
         body:
-          "CONCOST가 수행해 온 25개국 200개 이상 해외 프로젝트 경험을 바탕으로 CSI CODE 기반 BOQ, FED 직발주 내역서, WBS 패키지 내역서를 구성합니다.",
+          "CONCOST가 수행해 온 25개국 200개 이상 해외 프로젝트 경험을 바탕으로 Viet QS와 함께 CSI CODE 기반 BOQ, FED 직발주 내역서, WBS 패키지 내역서를 구성합니다.",
         items: ["CSI CODE 기반 BOQ", "FED/YRP 양식 내역 작성", "WBS 패키지별 산출근거"],
         image: "assets/images/global-estimate.jpg",
         heroImage: "assets/images/hero-global-site.png",
@@ -239,7 +239,7 @@ const i18n = {
           role: "Vietnam execution brand",
           title: "Quantity Surveying in Vietnam",
           body:
-            "Viet QS executes quantity take-off, BOQ/WBS, cost review, and design-change settlement for Vietnam project conditions.",
+            "Viet QS executes quantity take-off, BOQ/WBS, cost review, and design-change settlement for project conditions.",
           link: "Apply",
         },
       ],
@@ -365,7 +365,7 @@ const i18n = {
         number: "04",
         title: "Overseas and FED estimating",
         body:
-          "Based on CONCOST's experience across more than 200 overseas projects in 25 countries, we build CSI CODE-based BOQ, FED direct-order reports, and WBS package estimates.",
+          "Based on CONCOST's experience across more than 200 overseas projects in 25 countries, together with Viet QS, we build CSI CODE-based BOQ, FED direct-order reports, and WBS package estimates.",
         items: ["CSI CODE-based BOQ", "FED/YRP format estimates", "WBS package evidence"],
         image: "assets/images/global-estimate.jpg",
         heroImage: "assets/images/hero-global-site.png",
@@ -429,7 +429,7 @@ const i18n = {
           role: "Thương hiệu triển khai tại Việt Nam",
           title: "Quantity Surveying tại Việt Nam",
           body:
-            "Viet QS thực hiện bóc tách khối lượng, BOQ/WBS, kiểm tra chi phí và quyết toán thay đổi thiết kế theo điều kiện dự án tại Việt Nam.",
+            "Viet QS thực hiện bóc tách khối lượng, BOQ/WBS, kiểm tra chi phí và quyết toán thay đổi thiết kế theo điều kiện dự án.",
           link: "Ứng tuyển",
         },
       ],
@@ -555,7 +555,7 @@ const i18n = {
         number: "04",
         title: "Dự toán Quốc tế và FED",
         body:
-          "Dựa trên kinh nghiệm của CONCOST với hơn 200 dự án quốc tế tại 25 quốc gia, chúng tôi lập BOQ theo CSI CODE, hồ sơ FED direct-order và dự toán theo gói WBS.",
+          "Dựa trên kinh nghiệm của CONCOST với hơn 200 dự án quốc tế tại 25 quốc gia, cùng với Viet QS, chúng tôi lập BOQ theo CSI CODE, hồ sơ FED direct-order và dự toán theo gói WBS.",
         items: ["BOQ theo CSI CODE", "Dự toán theo mẫu FED/YRP", "Căn cứ theo gói WBS"],
         image: "assets/images/global-estimate.jpg",
         heroImage: "assets/images/hero-global-site.png",
@@ -829,38 +829,7 @@ langButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
-function handleHeroScroll(e) {
-  // 모바일 해상도(768px 이하)에서는 데스크탑 휠 스크롤 배너 전환을 완전 비활성화
-  if (window.innerWidth <= 768) {
-    return;
-  }
 
-  if (window.scrollY > 10) return; // Only hijack scroll when exactly at the top
-
-  if (e.deltaY > 0) {
-    // Scrolling down
-    if (currentHeroIndex < serviceKeys.length - 1) {
-      e.preventDefault();
-      if (isAnimating) return;
-      isAnimating = true;
-      renderTab(serviceKeys[currentHeroIndex + 1], true, "down");
-      setTimeout(() => { isAnimating = false; }, 1200);
-    } else {
-      // Allow default scroll down when at the last banner
-    }
-  } else if (e.deltaY < 0) {
-    // Scrolling up
-    if (currentHeroIndex > 0) {
-      e.preventDefault();
-      if (isAnimating) return;
-      isAnimating = true;
-      renderTab(serviceKeys[currentHeroIndex - 1], true, "up");
-      setTimeout(() => { isAnimating = false; }, 1200);
-    }
-  }
-}
-
-window.addEventListener("wheel", handleHeroScroll, { passive: false });
 
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
