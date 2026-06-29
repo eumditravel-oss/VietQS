@@ -831,6 +831,39 @@ langButtons.forEach((button) => {
 
 
 
+function handleHeroScroll(e) {
+  // 모바일 해상도(768px 이하)에서는 데스크탑 휠 스크롤 배너 전환을 완전 비활성화
+  if (window.innerWidth <= 768) {
+    return;
+  }
+
+  if (window.scrollY > 10) return; // Only hijack scroll when exactly at the top
+
+  if (e.deltaY > 0) {
+    // Scrolling down
+    if (currentHeroIndex < serviceKeys.length - 1) {
+      e.preventDefault();
+      if (isAnimating) return;
+      isAnimating = true;
+      renderTab(serviceKeys[currentHeroIndex + 1], true, "down");
+      setTimeout(() => { isAnimating = false; }, 1200);
+    } else {
+      // Allow default scroll down when at the last banner
+    }
+  } else if (e.deltaY < 0) {
+    // Scrolling up
+    if (currentHeroIndex > 0) {
+      e.preventDefault();
+      if (isAnimating) return;
+      isAnimating = true;
+      renderTab(serviceKeys[currentHeroIndex - 1], true, "up");
+      setTimeout(() => { isAnimating = false; }, 1200);
+    }
+  }
+}
+
+window.addEventListener("wheel", handleHeroScroll, { passive: false });
+
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
